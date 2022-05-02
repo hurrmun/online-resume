@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import {
   Box,
   Flex,
@@ -7,9 +7,17 @@ import {
   useColorModeValue,
   Stack,
   Text,
+  Show,
   useColorMode,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerHeader,
+  DrawerBody,
+  useDisclosure,
+  DrawerCloseButton,
 } from '@chakra-ui/react';
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { MoonIcon, SunIcon, HamburgerIcon } from '@chakra-ui/icons';
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -18,8 +26,9 @@ const NavLink = ({ children }: { children: ReactNode }) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
+      bg: useColorModeValue('blue.200', 'gray.700'),
     }}
+    variant='link'
     href={'#'}
   >
     {children}
@@ -28,23 +37,50 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 
 export default function Nav() {
   const { colorMode, toggleColorMode } = useColorMode();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box bg={useColorModeValue('blue.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Text fontSize='xl' casing='uppercase' fontWeight='bold'>
             Herman Loh
           </Text>
-          <Stack direction={'row'} spacing={7}>
-            <NavLink children='About Me' />
-            <NavLink children='Skills' />
-            <NavLink children='Experience' />
-            <NavLink children='Projects' />
+          <Show above='md'>
+            <Stack direction='row' spacing={[3, 3, 5, 8]}>
+              <NavLink children='About Me' />
+              <NavLink children='Skills' />
+              <NavLink children='Experience' />
+              <NavLink children='Projects' />
+              <NavLink children='Contact' />
+            </Stack>
+          </Show>
+          <Stack direction='row' spacing={[3, 3, 7]}>
+            <Button onClick={toggleColorMode}>
+              {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+            </Button>
+            <Show below='md'>
+              <Button onClick={onOpen} variant='outline'>
+                <HamburgerIcon />
+              </Button>
+            </Show>
+            <Drawer placement='right' onClose={onClose} isOpen={isOpen}>
+              <DrawerOverlay />
+              <DrawerContent>
+                <DrawerCloseButton />
+                <DrawerHeader>Navigate to</DrawerHeader>
+                <DrawerBody>
+                  <Stack direction='column' spacing={[3, 3, 7]}>
+                    <NavLink children='About Me' />
+                    <NavLink children='Skills' />
+                    <NavLink children='Experience' />
+                    <NavLink children='Projects' />
+                    <NavLink children='Contact' />
+                  </Stack>
+                </DrawerBody>
+              </DrawerContent>
+            </Drawer>
           </Stack>
-          <Button onClick={toggleColorMode}>
-            {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-          </Button>
         </Flex>
       </Box>
     </>
