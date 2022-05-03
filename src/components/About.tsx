@@ -40,6 +40,26 @@ const item = {
   },
 };
 
+const itemReverse = {
+  hidden: { opacity: 0, x: -200 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1.6,
+    },
+  },
+  exit: {
+    opacity: 0,
+    x: 200,
+    transition: {
+      ease: 'easeInOut',
+      duration: 0.8,
+    },
+  },
+};
+
 export default function About() {
   const { scrollYProgress } = useViewportScroll();
   const { about } = COPYWRITE;
@@ -66,7 +86,7 @@ export default function About() {
             {about.heading}
           </Heading>
         </ChakraBox>
-        <ChakraBox variants={item}>
+        <ChakraBox variants={itemReverse}>
           <Text
             marginTop={10}
             paddingX={5}
@@ -74,6 +94,19 @@ export default function About() {
             fontWeight='light'
           >
             {about.description}
+          </Text>
+        </ChakraBox>
+        <ChakraBox
+          variants={item}
+          bg={useColorModeValue('orange.200', 'gray.900')}
+          marginTop={10}
+          width='full'
+          paddingX={6}
+          paddingY={8}
+          borderRadius='xl'
+        >
+          <Text fontSize={{ base: 'lg', lg: '2xl' }} fontWeight='light'>
+            {about.introduction}
           </Text>
         </ChakraBox>
       </ChakraBox>
