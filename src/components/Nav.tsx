@@ -26,10 +26,11 @@ const NavLink = ({ children }: { children: ReactNode }) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('blue.200', 'gray.700'),
+      bg: useColorModeValue('orange.200', 'gray.700'),
     }}
-    variant='link'
     href={'#'}
+    textTransform='lowercase'
+    fontWeight='bold'
   >
     {children}
   </Link>
@@ -41,7 +42,11 @@ export default function Nav() {
 
   return (
     <>
-      <Box bg={useColorModeValue('blue.100', 'gray.900')} px={4}>
+      <Box
+        px={4}
+        bg={useColorModeValue('orange.300', 'gray.900')}
+        color={useColorModeValue('yellow.800', 'white')}
+      >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Text fontSize='xl' casing='uppercase' fontWeight='bold'>
             Herman Loh
@@ -56,11 +61,27 @@ export default function Nav() {
             </Stack>
           </Show>
           <Stack direction='row' spacing={[3, 3, 7]}>
-            <Button onClick={toggleColorMode}>
+            <Button
+              onClick={toggleColorMode}
+              variant='outline'
+              borderColor={useColorModeValue('orange.900', 'white')}
+              _hover={{
+                textDecoration: 'none',
+                bg: useColorModeValue('orange.200', 'gray.700'),
+              }}
+            >
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
             <Show below='md'>
-              <Button onClick={onOpen} variant='outline'>
+              <Button
+                onClick={onOpen}
+                variant='ghost'
+                fontSize='xl'
+                _hover={{
+                  textDecoration: 'none',
+                  bg: useColorModeValue('orange.200', 'gray.700'),
+                }}
+              >
                 <HamburgerIcon />
               </Button>
             </Show>
