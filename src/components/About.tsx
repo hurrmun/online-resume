@@ -98,7 +98,7 @@ export default function About() {
         </ChakraBox>
         <ChakraBox
           variants={item}
-          bg={useColorModeValue('orange.200', 'gray.900')}
+          bg={useColorModeValue('orange.100', 'gray.900')}
           marginTop={10}
           width='full'
           paddingX={6}
