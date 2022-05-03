@@ -46,6 +46,9 @@ export default function Nav() {
         px={4}
         bg={useColorModeValue('orange.300', 'gray.900')}
         color={useColorModeValue('yellow.800', 'white')}
+        position='sticky'
+        top={0}
+        width='full'
       >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Text fontSize='xl' casing='uppercase' fontWeight='bold'>
