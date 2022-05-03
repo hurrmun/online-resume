@@ -49,6 +49,7 @@ export default function Nav() {
         position='sticky'
         top={0}
         width='full'
+        zIndex={1}
       >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Text fontSize='xl' casing='uppercase' fontWeight='bold'>

@@ -3,74 +3,29 @@ import {
   chakra,
   Heading,
   Text,
+  IconButton,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { motion, isValidMotionProp, useViewportScroll } from 'framer-motion';
+import { TriangleDownIcon } from '@chakra-ui/icons';
+import { motion, isValidMotionProp } from 'framer-motion';
 import { COPYWRITE } from './data/copywrite';
+import { container, item, itemReverse } from './animations';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
 });
 
-const container = {
-  show: {
-    transition: {
-      staggerChildren: 0.35,
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, x: 200 },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
-      duration: 1.6,
-    },
-  },
-  exit: {
-    opacity: 0,
-    x: -200,
-    transition: {
-      ease: 'easeInOut',
-      duration: 0.8,
-    },
-  },
-};
-
-const itemReverse = {
-  hidden: { opacity: 0, x: -200 },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
-      duration: 1.6,
-    },
-  },
-  exit: {
-    opacity: 0,
-    x: 200,
-    transition: {
-      ease: 'easeInOut',
-      duration: 0.8,
-    },
-  },
-};
-
 export default function About() {
-  const { scrollYProgress } = useViewportScroll();
   const { about } = COPYWRITE;
 
   return (
-    <Box marginTop={10}>
+    <Box marginTop={20}>
       <ChakraBox
+        height='60vh'
         display='flex'
         flexDirection='column'
         alignItems='center'
-        justifyContent='space-evenly'
+        justifyContent='center'
         variants={container}
         initial='hidden'
         animate='show'
@@ -109,6 +64,27 @@ export default function About() {
             {about.introduction}
           </Text>
         </ChakraBox>
+      </ChakraBox>
+      <ChakraBox
+        display='flex'
+        justifyContent='center'
+        initial={{ opacity: 0 }}
+        animate={{ scale: [1, 1.5, 1], opacity: [0.8, 1, 0.8] }}
+        // @ts-ignore no problem in operation, although type error appears.
+        transition={{ duration: 3, repeat: Infinity }}
+      >
+        <IconButton
+          aria-label='scroll-down'
+          icon={<TriangleDownIcon />}
+          borderRadius='full'
+          fontSize='3xl'
+          variant='ghost'
+          paddingY={8}
+          padding={4}
+          _hover={{
+            bg: useColorModeValue('orange.200', 'gray.700'),
+          }}
+        />
       </ChakraBox>
     </Box>
   );

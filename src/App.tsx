@@ -12,7 +12,7 @@ function App() {
       minH=' 200vh'
     >
       <Nav />
-      <Container maxW='6xl'>
+      <Container maxW='7xl'>
         <About />
         <Skills />
       </Container>
