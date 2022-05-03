@@ -33,6 +33,16 @@ const SkillCard = ({ name }: { name: string }) => {
 export default function Skills() {
   return (
     <Box marginTop={{ base: 20, lg: 32 }}>
+      <Heading
+        fontSize={{ base: '3xl', lg: '7xl' }}
+        paddingX={5}
+        marginY={20}
+        textAlign='center'
+        textTransform='uppercase'
+        fontWeight='black'
+      >
+        Skills
+      </Heading>
       <ChakraBox
         variants={container}
         initial='hidden'

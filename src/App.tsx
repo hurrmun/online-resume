@@ -3,6 +3,7 @@ import { Box, Text, useColorModeValue, Container } from '@chakra-ui/react';
 import Nav from './components/Nav';
 import About from './components/About';
 import Skills from './components/Skills';
+import Experience from './components/Experience';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Container maxW='7xl'>
         <About />
         <Skills />
+        <Experience />
       </Container>
     </Box>
   );
