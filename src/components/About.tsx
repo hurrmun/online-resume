@@ -19,9 +19,8 @@ export default function About() {
   const { about } = COPYWRITE;
 
   return (
-    <Box marginTop={20}>
+    <Box marginTop={16}>
       <ChakraBox
-        height='60vh'
         display='flex'
         flexDirection='column'
         alignItems='center'
@@ -36,7 +35,7 @@ export default function About() {
           <Heading
             fontSize={{ base: '6xl', lg: '9xl' }}
             lineHeight={1}
-            paddingX={5}
+            paddingX={4}
           >
             {about.heading}
           </Heading>
@@ -53,7 +52,7 @@ export default function About() {
         </ChakraBox>
         <ChakraBox
           variants={item}
-          bg={useColorModeValue('orange.100', 'gray.900')}
+          bg={useColorModeValue('orange.100', 'gray.700')}
           marginTop={10}
           width='full'
           paddingX={6}
@@ -68,10 +67,11 @@ export default function About() {
       <ChakraBox
         display='flex'
         justifyContent='center'
-        initial={{ opacity: 0 }}
-        animate={{ scale: [1, 1.5, 1], opacity: [0.8, 1, 0.8] }}
+        initial={{ y: 0, opacity: 0 }}
+        animate={{ y: [0, 24, 0], opacity: [0.5, 1, 0.5] }}
         // @ts-ignore no problem in operation, although type error appears.
         transition={{ duration: 3, repeat: Infinity }}
+        marginTop={16}
       >
         <IconButton
           aria-label='scroll-down'

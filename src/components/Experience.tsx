@@ -19,7 +19,7 @@ export default function Experience() {
   return (
     <Box marginTop={{ base: 20, lg: 32 }}>
       <Heading
-        fontSize={{ base: '3xl', lg: '7xl' }}
+        fontSize={{ base: '4xl', lg: '7xl' }}
         paddingX={5}
         marginY={20}
         textAlign='center'

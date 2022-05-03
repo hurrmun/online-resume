@@ -1,5 +1,5 @@
 export const skills = {
-  languages: ['Javascript', 'Typescript', 'HTML', 'CSS', 'Python'],
+  languages: ['Javascript', 'Typescript', 'Node.js', 'HTML', 'CSS', 'Python'],
   technologies: [
     'React',
     'Redux',
