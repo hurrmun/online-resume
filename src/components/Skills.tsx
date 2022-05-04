@@ -23,14 +23,14 @@ const SkillCard = ({ name }: { name: string }) => {
       px={4}
       py={2}
     >
-      <Text fontSize='2xl'>{name}</Text>
+      <Text fontSize={{ base: 'lg', lg: '2xl' }}>{name}</Text>
     </Box>
   );
 };
 
 export default function Skills() {
   return (
-    <Box marginTop={{ base: 20, lg: 32 }}>
+    <Box marginTop={{ base: 12, lg: 20 }}>
       <Heading
         fontSize={{ base: '4xl', lg: '7xl' }}
         paddingX={5}
@@ -47,7 +47,7 @@ export default function Skills() {
         animate='show'
         exit='exit'
       >
-        <ChakraBox marginY={10} paddingX={5} variants={item}>
+        <ChakraBox marginY={10} paddingX={2} variants={item}>
           <Heading
             fontSize={{ base: '3xl', lg: '5xl' }}
             lineHeight={1}
@@ -64,7 +64,7 @@ export default function Skills() {
           </Flex>
         </ChakraBox>
         <Divider />
-        <ChakraBox marginY={10} paddingX={5} variants={item}>
+        <ChakraBox marginY={10} paddingX={2} variants={item}>
           <Heading
             fontSize={{ base: '3xl', lg: '5xl' }}
             lineHeight={1}
@@ -81,7 +81,7 @@ export default function Skills() {
           </Flex>
         </ChakraBox>
         <Divider />
-        <ChakraBox marginY={10} paddingX={5} variants={item}>
+        <ChakraBox marginY={10} paddingX={2} variants={item}>
           <Heading
             fontSize={{ base: '3xl', lg: '5xl' }}
             lineHeight={1}

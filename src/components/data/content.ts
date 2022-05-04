@@ -18,6 +18,7 @@ export const skills = {
     'Adobe Creative Cloud',
     'Figma',
     'Design Thinking',
-    'Graphic & UI/UX Design',
+    'Graphic Design',
+    'UI/UX Design',
   ],
 };
