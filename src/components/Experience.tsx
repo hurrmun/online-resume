@@ -34,14 +34,23 @@ const Card = () => {
   }, [seeMore]);
 
   return (
-    <Grid templateColumns='repeat(4, 1fr)' gap={4} alignItems='center'>
-      <GridItem colSpan={1}>
+    <Grid
+      templateColumns='repeat(4, 1fr)'
+      gap={{ base: 2, lg: 4 }}
+      alignItems='center'
+      bg={useColorModeValue(
+        { base: 'orange.100', lg: 'transparent' },
+        { base: 'gray.700', lg: 'transparent' }
+      )}
+      borderRadius='xl'
+    >
+      <GridItem colSpan={1} textAlign='right'>
         <Image
           borderRadius='full'
           objectFit='cover'
           src='https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2011/11/square-format-01.jpg?resize=600%2C600&ssl=1'
           alt='ufinity logo'
-          padding={{ base: 2, lg: 8 }}
+          padding={{ base: 3, lg: 8 }}
         />
       </GridItem>
       <GridItem
@@ -50,8 +59,13 @@ const Card = () => {
         flexDirection='column'
         justifyContent='center'
         gap={2}
-        padding={{ base: 6, lg: 8 }}
-        bg={useColorModeValue('orange.100', 'gray.700')}
+        paddingLeft={{ base: 0, md: 4, lg: 8 }}
+        paddingRight={{ base: 3, lg: 8 }}
+        paddingY={{ base: 6, lg: 8 }}
+        bg={useColorModeValue(
+          { base: 'transparent', lg: 'orange.100' },
+          { base: 'transparent', lg: 'gray.700' }
+        )}
         borderRadius='xl'
       >
         <Box>
@@ -69,6 +83,10 @@ const Card = () => {
           display={display}
           variant='ghost'
           onClick={() => setSeeMore((prev) => !prev)}
+          _hover={{
+            textDecoration: 'none',
+            bg: useColorModeValue('orange.200', 'gray.600'),
+          }}
         >
           {cardContent.expandText}
         </Button>
@@ -95,7 +113,7 @@ export default function Experience() {
       >
         Experience
       </Heading>
-      <VStack gap={2}>
+      <VStack gap={2} paddingRight={{ base: 0, lg: 4 }}>
         <Card />
         <Card />
         <Card />
