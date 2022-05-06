@@ -14,9 +14,20 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
-import { skills } from './data/content';
+import { workExperience } from '../data/content';
+import { container, item } from './animations';
 
-const Card = () => {
+const Card = ({
+  companyName,
+  duration,
+  description,
+  imageSrc,
+}: {
+  companyName: string;
+  duration: string;
+  description: string;
+  imageSrc: string;
+}) => {
   const display = useBreakpointValue({ base: 'block', lg: 'none' });
 
   const [seeMore, setSeeMore] = useState(false);
@@ -44,12 +55,12 @@ const Card = () => {
       )}
       borderRadius='xl'
     >
-      <GridItem colSpan={1} textAlign='right'>
+      <GridItem colSpan={1} justifySelf='center'>
         <Image
           borderRadius='full'
           objectFit='cover'
-          src='https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2011/11/square-format-01.jpg?resize=600%2C600&ssl=1'
-          alt='ufinity logo'
+          src={imageSrc}
+          alt={`${companyName} logo`}
           padding={{ base: 3, lg: 8 }}
         />
       </GridItem>
@@ -69,15 +80,13 @@ const Card = () => {
         borderRadius='xl'
       >
         <Box>
-          <Heading fontSize={{ base: '2xl', lg: '5xl' }}>Company Name</Heading>
+          <Heading fontSize={{ base: '2xl', lg: '5xl' }}>{companyName}</Heading>
           <Text fontSize={{ base: 'xl', lg: '2xl' }} fontStyle='italic'>
-            Mar 22 - Present
+            {duration}
           </Text>
         </Box>
         <Text fontSize={{ base: 'lg', lg: 'xl' }} noOfLines={cardContent.lines}>
-          Implemented UI using front-end libraries such as React, Redux, Redux
-          Toolkit, React Hook Forms, and MUI. Unit, functional testing, and bug
-          fixing for various UI components using Jest and React Testing Library.
+          {description}
         </Text>
         <Button
           display={display}
@@ -102,7 +111,7 @@ const ChakraBox = chakra(motion.div, {
 
 export default function Experience() {
   return (
-    <Box marginTop={{ base: 20, lg: 32 }}>
+    <ChakraBox variants={container} marginTop={{ base: 20, lg: 32 }}>
       <Heading
         fontSize={{ base: '4xl', lg: '7xl' }}
         paddingX={5}
@@ -114,11 +123,13 @@ export default function Experience() {
         Experience
       </Heading>
       <VStack gap={2} paddingRight={{ base: 0, lg: 4 }}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {workExperience.map(({ ...props }, index) => (
+          <ChakraBox key={props.companyName} variants={item}>
+            <Card {...props} />
+            {index !== workExperience.length - 1 && <Divider marginTop={4} />}
+          </ChakraBox>
+        ))}
       </VStack>
-    </Box>
+    </ChakraBox>
   );
 }

@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { TriangleDownIcon } from '@chakra-ui/icons';
 import { motion, isValidMotionProp } from 'framer-motion';
-import { COPYWRITE } from './data/copywrite';
+import { COPYWRITE } from '../data/copywrite';
 import { container, item, itemReverse } from './animations';
 
 const ChakraBox = chakra(motion.div, {

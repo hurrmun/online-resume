@@ -8,7 +8,7 @@ import {
   chakra,
 } from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
-import { skills } from './data/content';
+import { skills } from '../data/content';
 import { container, item } from './animations';
 
 const ChakraBox = chakra(motion.div, {
