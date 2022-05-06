@@ -1,7 +1,7 @@
 import generalAssemblyLogo from '../assets/generalassembly-logo.png';
 import ufinityLogo from '../assets/ufinity-logo.png';
 import rsafLogo from '../assets/rsaf-logo.png';
-import sixmoredayLogo from '../assets/sixmoredays-logo.png';
+import sixmoredaysLogo from '../assets/sixmoredays-logo.png';
 
 export const skills = {
   languages: ['Javascript', 'Typescript', 'Node.js', 'HTML', 'CSS', 'Python'],
@@ -31,6 +31,8 @@ export const skills = {
 export const workExperience = [
   {
     companyName: 'Ufinity',
+
+    role: 'Associate Software Engineer',
     duration: 'March 2022 to Present',
     description:
       'Implemented UI using front-end libraries such as React, Redux, Redux Toolkit, React Hook Forms, and MUI. Unit, functional testing, and bug fixing for various UI components using Jest and React Testing Library.',
@@ -38,23 +40,26 @@ export const workExperience = [
   },
   {
     companyName: 'General Assembly',
-    duration: 'March 2022 to Present',
+    role: 'Instructional Associate',
+    duration: 'December 2021 to March 2022',
     description:
-      'Implemented UI using front-end libraries such as React, Redux, Redux Toolkit, React Hook Forms, and MUI. Unit, functional testing, and bug fixing for various UI components using Jest and React Testing Library.',
+      'Conducted lessons in Full-Stack Software Development with JavaScript, React, Express and MongoDB. As a Teaching Assistant, enabled students to achieve their goals to be industry-ready Software Engineers.',
     imageSrc: generalAssemblyLogo,
   },
   {
-    companyName: 'RSAF',
-    duration: 'March 2022 to Present',
+    companyName: 'Republic of Singapore Air Force',
+    role: 'Service  Medic',
+    duration: 'December 2019 to August 2021',
     description:
-      'Implemented UI using front-end libraries such as React, Redux, Redux Toolkit, React Hook Forms, and MUI. Unit, functional testing, and bug fixing for various UI components using Jest and React Testing Library.',
+      'Introduced a new patient management system, streamlining appointments between doctors and patients. Created numerous designed posters and videos for RSAF’s Healthy Lifestyle & Anti-smoking Campaigns.',
     imageSrc: rsafLogo,
   },
   {
     companyName: 'Sixmoredays',
-    duration: 'March 2022 to Present',
+    role: 'Digital Design Intern',
+    duration: 'March 2018 to June 2018',
     description:
-      'Implemented UI using front-end libraries such as React, Redux, Redux Toolkit, React Hook Forms, and MUI. Unit, functional testing, and bug fixing for various UI components using Jest and React Testing Library.',
-    imageSrc: sixmoredayLogo,
+      'Produced website mock-ups & social media assets and contributed to pitches & projects taken by the company. Created layout designs for web banners, interactive social posts & digital marketing with Facebook post hacking.',
+    imageSrc: sixmoredaysLogo,
   },
 ];

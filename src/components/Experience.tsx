@@ -19,11 +19,13 @@ import { container, item } from './animations';
 
 const Card = ({
   companyName,
+  role,
   duration,
   description,
   imageSrc,
 }: {
   companyName: string;
+  role: string;
   duration: string;
   description: string;
   imageSrc: string;
@@ -82,7 +84,7 @@ const Card = ({
         <Box>
           <Heading fontSize={{ base: '2xl', lg: '5xl' }}>{companyName}</Heading>
           <Text fontSize={{ base: 'xl', lg: '2xl' }} fontStyle='italic'>
-            {duration}
+            {role} | {duration}
           </Text>
         </Box>
         <Text fontSize={{ base: 'lg', lg: 'xl' }} noOfLines={cardContent.lines}>
