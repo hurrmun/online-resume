@@ -56,15 +56,21 @@ export default function Nav() {
             Herman Loh
           </Text>
           <Show above='md'>
-            <Stack direction='row' spacing={[3, 3, 5, 8]}>
+            <Stack
+              direction='row'
+              spacing={[0, 3, 5, 8]}
+              alignItems='center'
+              textAlign='center'
+            >
               <NavLink children='About Me' />
               <NavLink children='Skills' />
               <NavLink children='Experience' />
+              <NavLink children='Education' />
               <NavLink children='Projects' />
               <NavLink children='Contact' />
             </Stack>
           </Show>
-          <Stack direction='row' spacing={[3, 3, 7]}>
+          <Stack direction='row' spacing={3}>
             <Button
               onClick={toggleColorMode}
               variant='outline'
@@ -99,6 +105,7 @@ export default function Nav() {
                     <NavLink children='About Me' />
                     <NavLink children='Skills' />
                     <NavLink children='Experience' />
+                    <NavLink children='Education' />
                     <NavLink children='Projects' />
                     <NavLink children='Contact' />
                   </Stack>
