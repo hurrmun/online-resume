@@ -67,15 +67,48 @@ export const workExperience = [
 
 export const education = [
   {
+    institution: 'Singapore Polytechnic',
+    duration: '2016 - 2019',
+    certification: 'Diploma in Visual Communication and Media Design',
+    imageSrc: singaporepolyLogo,
+  },
+  {
     institution: 'General Assembly',
     duration: '2021 - 2021',
     certification: 'Software Engineering Immersive',
     imageSrc: generalAssemblyLogo,
   },
+];
+
+export const projects = [
   {
-    institution: 'Singapore Polytechnic',
-    duration: '2016 - 2019',
-    certification: 'Diploma in Visual Communication and Media Design',
-    imageSrc: singaporepolyLogo,
+    name: 'Project Name',
+    affiliation: 'Hosted by ? or detailed desc',
+    description: 'Project description',
+    tags: ['javascript', 'react', 'node.js'],
+    imageSrc:
+      'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
+    github: '',
+    deployment: '',
+  },
+  {
+    name: 'Project Name',
+    affiliation: 'Hosted by ? or detailed desc',
+    description: 'Project description',
+    tags: ['javascript', 'react', 'node.js'],
+    imageSrc:
+      'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
+    github: '',
+    deployment: '',
+  },
+  {
+    name: 'Project Name',
+    affiliation: 'Hosted by ? or detailed desc',
+    description: 'Project description',
+    tags: ['javascript', 'react', 'node.js'],
+    imageSrc:
+      'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
+    github: '',
+    deployment: '',
   },
 ];

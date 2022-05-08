@@ -1,4 +1,12 @@
-import { Heading, chakra, Image, Text, VStack, Flex } from '@chakra-ui/react';
+import {
+  Heading,
+  chakra,
+  Image,
+  Text,
+  VStack,
+  Flex,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
 import { education } from '../data/content';
 import { container, item } from './animations';
@@ -33,7 +41,15 @@ const Card = ({
       <Text fontSize={{ base: 'xl', lg: '2xl' }} fontStyle='italic'>
         {duration}
       </Text>
-      <Text fontSize={{ base: 'lg', lg: 'xl' }}>{certification}</Text>
+      <Text
+        bg={useColorModeValue('orange.200', 'gray.700')}
+        fontSize={{ base: 'lg', lg: 'xl' }}
+        paddingX={3}
+        paddingY={1}
+        borderRadius='lg'
+      >
+        {certification}
+      </Text>
     </VStack>
   );
 };
