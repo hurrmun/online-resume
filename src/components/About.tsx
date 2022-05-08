@@ -7,12 +7,14 @@ import {
   useColorModeValue,
   Link,
   Button,
+  HStack,
 } from '@chakra-ui/react';
 import { TriangleDownIcon, DownloadIcon } from '@chakra-ui/icons';
 import { motion, isValidMotionProp } from 'framer-motion';
 import { COPYWRITE } from '../data/copywrite';
 import { container, item, itemReverse } from './animations';
 import resume from '../files/herman-resume.pdf';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
@@ -54,24 +56,60 @@ export default function About() {
           </Text>
         </ChakraBox>
         <ChakraBox variants={item} marginTop={6}>
-          <Link
-            href={resume}
-            download
-            _hover={{
-              textDecoration: 'none',
-            }}
-          >
-            <Button
-              variant='outline'
-              borderColor={useColorModeValue('yellow.900', 'white')}
-              rightIcon={<DownloadIcon />}
+          <HStack>
+            <Link
+              href='https://github.com/hurrmun'
               _hover={{
-                bg: useColorModeValue('orange.200', 'gray.700'),
+                textDecoration: 'none',
+              }}
+              target='_blank'
+            >
+              <IconButton
+                aria-label='github'
+                icon={<FaGithub />}
+                variant='outline'
+                borderColor={useColorModeValue('yellow.900', 'white')}
+                _hover={{
+                  bg: useColorModeValue('orange.200', 'gray.700'),
+                }}
+              />
+            </Link>
+            <Link
+              href='https://www.linkedin.com/in/hermanlyx/'
+              _hover={{
+                textDecoration: 'none',
+              }}
+              target='_blank'
+            >
+              <IconButton
+                aria-label='linkedIn'
+                icon={<FaLinkedinIn />}
+                variant='outline'
+                borderColor={useColorModeValue('yellow.900', 'white')}
+                _hover={{
+                  bg: useColorModeValue('orange.200', 'gray.700'),
+                }}
+              />
+            </Link>
+            <Link
+              href={resume}
+              download
+              _hover={{
+                textDecoration: 'none',
               }}
             >
-              Download my CV
-            </Button>
-          </Link>
+              <Button
+                variant='outline'
+                borderColor={useColorModeValue('yellow.900', 'white')}
+                rightIcon={<DownloadIcon />}
+                _hover={{
+                  bg: useColorModeValue('orange.200', 'gray.700'),
+                }}
+              >
+                Download my CV
+              </Button>
+            </Link>
+          </HStack>
         </ChakraBox>
         <ChakraBox
           variants={itemReverse}
