@@ -5,11 +5,14 @@ import {
   Text,
   IconButton,
   useColorModeValue,
+  Link,
+  Button,
 } from '@chakra-ui/react';
-import { TriangleDownIcon } from '@chakra-ui/icons';
+import { TriangleDownIcon, DownloadIcon } from '@chakra-ui/icons';
 import { motion, isValidMotionProp } from 'framer-motion';
 import { COPYWRITE } from '../data/copywrite';
 import { container, item, itemReverse } from './animations';
+import resume from '../files/herman-resume.pdf';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
@@ -50,8 +53,28 @@ export default function About() {
             {about.description}
           </Text>
         </ChakraBox>
+        <ChakraBox variants={item} marginTop={6}>
+          <Link
+            href={resume}
+            download
+            _hover={{
+              textDecoration: 'none',
+            }}
+          >
+            <Button
+              variant='outline'
+              borderColor={useColorModeValue('yellow.900', 'white')}
+              rightIcon={<DownloadIcon />}
+              _hover={{
+                bg: useColorModeValue('orange.200', 'gray.700'),
+              }}
+            >
+              Download my CV
+            </Button>
+          </Link>
+        </ChakraBox>
         <ChakraBox
-          variants={item}
+          variants={itemReverse}
           bg={useColorModeValue('orange.100', 'gray.700')}
           marginTop={10}
           width='full'
