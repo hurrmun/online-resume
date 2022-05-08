@@ -2,6 +2,7 @@ import generalAssemblyLogo from '../assets/generalassembly-logo.png';
 import ufinityLogo from '../assets/ufinity-logo.png';
 import rsafLogo from '../assets/rsaf-logo.png';
 import sixmoredaysLogo from '../assets/sixmoredays-logo.png';
+import singaporepolyLogo from '../assets/singaporepoly-logo.png';
 
 export const skills = {
   languages: ['Javascript', 'Typescript', 'Node.js', 'HTML', 'CSS', 'Python'],
@@ -61,5 +62,20 @@ export const workExperience = [
     description:
       'Produced website mock-ups & social media assets and contributed to pitches & projects taken by the company. Created layout designs for web banners, interactive social posts & digital marketing with Facebook post hacking.',
     imageSrc: sixmoredaysLogo,
+  },
+];
+
+export const education = [
+  {
+    institution: 'General Assembly',
+    duration: '2021 - 2021',
+    certification: 'Software Engineering Immersive',
+    imageSrc: generalAssemblyLogo,
+  },
+  {
+    institution: 'Singapore Polytechnic',
+    duration: '2016 - 2019',
+    certification: 'Diploma in Visual Communication and Media Design',
+    imageSrc: singaporepolyLogo,
   },
 ];
