@@ -11,8 +11,11 @@ import {
   Box,
   Tag,
   HStack,
+  Link,
+  IconButton,
 } from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
+import { FaGithub, FaLaptopCode } from 'react-icons/fa';
 import { projects } from '../data/content';
 import { container, item } from './animations';
 
@@ -58,13 +61,55 @@ const Card = ({
         <Text fontSize={{ base: 'lg', lg: 'xl' }} fontStyle='italic'>
           {affiliation}
         </Text>
-        <HStack spacing={1} marginTop={1}>
+        <Flex flexWrap='wrap' gap={1} marginTop={1}>
           {tags.map((tag) => (
             <TechTag tag={tag} />
           ))}
-        </HStack>
+        </Flex>
       </Box>
-      <Text fontSize={{ base: 'md', lg: 'lg' }}>{description}</Text>
+      <Text
+        fontSize={{ base: 'md', lg: 'lg' }}
+        overflow='scroll'
+        textOverflow='clip'
+      >
+        {description}
+      </Text>
+      <HStack paddingY={3}>
+        <Link
+          href='https://github.com/hurrmun'
+          _hover={{
+            textDecoration: 'none',
+          }}
+          target='_blank'
+        >
+          <IconButton
+            aria-label='github'
+            icon={<FaGithub />}
+            variant='outline'
+            borderColor={useColorModeValue('yellow.900', 'white')}
+            _hover={{
+              bg: useColorModeValue('orange.200', 'gray.700'),
+            }}
+          />
+        </Link>
+        <Link
+          href='https://www.linkedin.com/in/hermanlyx/'
+          _hover={{
+            textDecoration: 'none',
+          }}
+          target='_blank'
+        >
+          <IconButton
+            aria-label='linkedIn'
+            icon={<FaLaptopCode />}
+            variant='outline'
+            borderColor={useColorModeValue('yellow.900', 'white')}
+            _hover={{
+              bg: useColorModeValue('orange.200', 'gray.700'),
+            }}
+          />
+        </Link>
+      </HStack>
     </GridItem>
   );
 };
@@ -89,7 +134,7 @@ export default function Projects() {
           lg: 'repeat(3, 1fr)',
         }}
         gap={{ base: 4, lg: 6 }}
-        alignItems='center'
+        alignItems='top'
       >
         {projects.map(({ ...props }, index) => (
           <ChakraBox key={props.name} variants={item}>

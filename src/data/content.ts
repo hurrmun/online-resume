@@ -82,30 +82,59 @@ export const education = [
 
 export const projects = [
   {
-    name: 'Project Name',
-    affiliation: 'Hosted by ? or detailed desc',
-    description: 'Project description',
-    tags: ['javascript', 'react', 'node.js'],
+    name: 'Financial Independence Calculator',
+    affiliation: 'Personal Project',
+    description:
+      'Compound interest calculator for multiple accounts, created to track your net worth after investing over time. Application calculates and displays information by year in a line chart for easy viewing.',
+    tags: [
+      'Javascript',
+      'React',
+      'Chakra UI',
+      'React Hook Form',
+      'Yup',
+      'ChartJS',
+    ],
     imageSrc:
       'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
     github: '',
     deployment: '',
   },
   {
-    name: 'Project Name',
-    affiliation: 'Hosted by ? or detailed desc',
-    description: 'Project description',
-    tags: ['javascript', 'react', 'node.js'],
+    name: 'QuizSG',
+    affiliation: 'Hack for Public Good by Open Government Products',
+    description:
+      'Full-Stack quiz builder and taker web application. Led creation of design screens for landing page, quiz taker & quiz maker flow using the OGP design system. Built to solve real problems that government officers are facing.',
+    tags: ['Typescript', 'React', 'Chakra UI'],
     imageSrc:
       'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
     github: '',
     deployment: '',
   },
   {
-    name: 'Project Name',
-    affiliation: 'Hosted by ? or detailed desc',
-    description: 'Project description',
-    tags: ['javascript', 'react', 'node.js'],
+    name: 'Daily Report',
+    affiliation: 'Report App Concept for a Concrete Supply Company',
+    description:
+      'Full-Stack application created to optimize a real use case of writing reports for material supplies on an excel spreadsheet. Implemented with login authentication, secure password hashing, and validation.',
+    tags: [
+      'Javascript',
+      'React',
+      'Node.js',
+      'PostgreSQL',
+      'knex',
+      'heroku',
+      'JWT',
+    ],
+    imageSrc:
+      'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
+    github: '',
+    deployment: '',
+  },
+  {
+    name: 'BuildAWT',
+    affiliation: 'Workout Building Tool',
+    description:
+      'Front-End application implemented with public API (wger API) that returns different exercises sorted by equipment and category. The app categorizes the data from the API, which the user can search for and add to their workouts.',
+    tags: ['Javascript', 'React', 'TailwindCSS', 'API'],
     imageSrc:
       'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
     github: '',
