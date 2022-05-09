@@ -40,8 +40,8 @@ const Card = ({
   description: string;
   tags: string[];
   imageSrc: string;
-  github: string;
-  deployment: string;
+  github?: string;
+  deployment?: string;
 }) => {
   return (
     <GridItem
@@ -76,36 +76,38 @@ const Card = ({
       </Text>
       <HStack paddingY={3}>
         <Link
-          href='https://github.com/hurrmun'
+          href={github}
           _hover={{
             textDecoration: 'none',
           }}
           target='_blank'
+          display={Boolean(github) ? 'block' : 'none'}
         >
           <IconButton
-            aria-label='github'
+            aria-label={`${name} github repository`}
             icon={<FaGithub />}
             variant='outline'
             borderColor={useColorModeValue('yellow.900', 'white')}
             _hover={{
-              bg: useColorModeValue('orange.200', 'gray.700'),
+              bg: useColorModeValue('orange.300', 'gray.800'),
             }}
           />
         </Link>
         <Link
-          href='https://www.linkedin.com/in/hermanlyx/'
+          href={deployment}
           _hover={{
             textDecoration: 'none',
           }}
           target='_blank'
+          display={Boolean(deployment) ? 'block' : 'none'}
         >
           <IconButton
-            aria-label='linkedIn'
+            aria-label={`${name} website`}
             icon={<FaLaptopCode />}
             variant='outline'
             borderColor={useColorModeValue('yellow.900', 'white')}
             _hover={{
-              bg: useColorModeValue('orange.200', 'gray.700'),
+              bg: useColorModeValue('orange.300', 'gray.800'),
             }}
           />
         </Link>

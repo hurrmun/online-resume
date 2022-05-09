@@ -96,23 +96,22 @@ export const projects = [
     ],
     imageSrc:
       'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
-    github: '',
-    deployment: '',
+    github: 'https://github.com/hurrmun/singaporean-fi-estimator',
+    deployment: 'https://singaporean-fi-estimator.vercel.app/',
   },
   {
     name: 'QuizSG',
-    affiliation: 'Hack for Public Good by Open Government Products',
+    affiliation: 'Hack for Public Good Hackathon by OGP',
     description:
       'Full-Stack quiz builder and taker web application. Led creation of design screens for landing page, quiz taker & quiz maker flow using the OGP design system. Built to solve real problems that government officers are facing.',
     tags: ['Typescript', 'React', 'Chakra UI'],
     imageSrc:
       'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
-    github: '',
-    deployment: '',
+    github: 'https://github.com/opengovsg/quizSG',
   },
   {
     name: 'Daily Report',
-    affiliation: 'Report App Concept for a Concrete Supply Company',
+    affiliation: 'Report App Concept for Concrete Supplier',
     description:
       'Full-Stack application created to optimize a real use case of writing reports for material supplies on an excel spreadsheet. Implemented with login authentication, secure password hashing, and validation.',
     tags: [
@@ -126,8 +125,8 @@ export const projects = [
     ],
     imageSrc:
       'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
-    github: '',
-    deployment: '',
+    github: 'https://github.com/hurrmun/daily-report',
+    deployment: 'https://daily-report-hurrmun.herokuapp.com/',
   },
   {
     name: 'BuildAWT',
@@ -137,7 +136,7 @@ export const projects = [
     tags: ['Javascript', 'React', 'TailwindCSS', 'API'],
     imageSrc:
       'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
-    github: '',
-    deployment: '',
+    github: 'https://github.com/hurrmun/BuildAWT',
+    deployment: 'https://buildawt-app.vercel.app/',
   },
 ];
