@@ -273,8 +273,11 @@ export default function Projects() {
               </Link>
             </HStack>
             <Button
-              bg={useColorModeValue('orange.200', 'gray.800')}
+              bg={useColorModeValue('orange.50', 'gray.800')}
               onClick={onClose}
+              _hover={{
+                bg: useColorModeValue('orange.100', 'gray.700'),
+              }}
             >
               Close
             </Button>
