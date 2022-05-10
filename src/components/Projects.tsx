@@ -202,11 +202,13 @@ export default function Projects() {
       <Modal isOpen={isOpen} onClose={onClose} size='full'>
         <ModalOverlay />
         <ModalContent
-          bg={useColorModeValue('orange.50', 'gray.800')}
+          bg={useColorModeValue('orange.50', 'gray.700')}
           color={useColorModeValue('yellow.900', 'white')}
         >
-          <ModalHeader>{modalContent.name}</ModalHeader>
-          <ModalCloseButton />
+          <ModalHeader fontSize={{ base: 'xl', lg: '3xl' }} fontWeight='bold'>
+            {modalContent.name}
+          </ModalHeader>
+          <ModalCloseButton size='lg' />
           <ModalBody>
             <Image
               objectFit='cover'
@@ -273,10 +275,10 @@ export default function Projects() {
               </Link>
             </HStack>
             <Button
-              bg={useColorModeValue('orange.50', 'gray.800')}
+              bg={useColorModeValue('orange.50', 'gray.700')}
               onClick={onClose}
               _hover={{
-                bg: useColorModeValue('orange.100', 'gray.700'),
+                bg: useColorModeValue('orange.200', 'gray.800'),
               }}
             >
               Close
