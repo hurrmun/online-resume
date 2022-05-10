@@ -3,6 +3,11 @@ import ufinityLogo from '../assets/ufinity-logo.png';
 import rsafLogo from '../assets/rsaf-logo.png';
 import sixmoredaysLogo from '../assets/sixmoredays-logo.png';
 import singaporepolyLogo from '../assets/singaporepoly-logo.png';
+import buildawtScreen from '../assets/buildawt-screen.png';
+import dailyreportScreen from '../assets/dailyreport-screen.png';
+import financialcalcScreen from '../assets/financialcalc-screen.png';
+import quizsgScreen from '../assets/quizsg-screen.png';
+import game2048screen from '../assets/2048-screen.png';
 
 export const skills = {
   languages: ['Javascript', 'Typescript', 'Node.js', 'HTML', 'CSS', 'Python'],
@@ -94,8 +99,7 @@ export const projects = [
       'Yup',
       'ChartJS',
     ],
-    imageSrc:
-      'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
+    imageSrc: financialcalcScreen,
     github: 'https://github.com/hurrmun/singaporean-fi-estimator',
     deployment: 'https://singaporean-fi-estimator.vercel.app/',
   },
@@ -105,8 +109,7 @@ export const projects = [
     description:
       'Full-Stack quiz builder and taker web application. Led creation of design screens for landing page, quiz taker & quiz maker flow using the OGP design system. Built to solve real problems that government officers are facing.',
     tags: ['Typescript', 'React', 'Chakra UI'],
-    imageSrc:
-      'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
+    imageSrc: quizsgScreen,
     github: 'https://github.com/opengovsg/quizSG',
   },
   {
@@ -123,8 +126,7 @@ export const projects = [
       'heroku',
       'JWT',
     ],
-    imageSrc:
-      'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
+    imageSrc: dailyreportScreen,
     github: 'https://github.com/hurrmun/daily-report',
     deployment: 'https://daily-report-hurrmun.herokuapp.com/',
   },
@@ -134,9 +136,18 @@ export const projects = [
     description:
       'Front-End application implemented with public API (wger API) that returns different exercises sorted by equipment and category. The app categorizes the data from the API, which the user can search for and add to their workouts.',
     tags: ['Javascript', 'React', 'TailwindCSS', 'API'],
-    imageSrc:
-      'https://t4.ftcdn.net/jpg/02/83/62/49/360_F_283624932_44qUiM9p4NuVgSjX6coHVpEIt45EGBOB.jpg',
+    imageSrc: buildawtScreen,
     github: 'https://github.com/hurrmun/BuildAWT',
     deployment: 'https://buildawt-app.vercel.app/',
+  },
+  {
+    name: '2048 Game Clone',
+    affiliation: 'Clone of the hit mobile classic',
+    description:
+      'Recreation of the popular 2048 game using javascript logic. Made using html, css, javascript, jquery and bootstrap and deployed with Vercel.',
+    tags: ['Javascript', 'JQuery', 'Game', 'Bootstrap'],
+    imageSrc: game2048screen,
+    github: 'https://github.com/hurrmun/2048GameClone',
+    deployment: 'https://2048-game-clone.vercel.app/',
   },
 ];

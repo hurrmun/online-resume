@@ -42,7 +42,7 @@ const Card = ({
         {duration}
       </Text>
       <Text
-        bg={useColorModeValue('orange.200', 'gray.700')}
+        bg={useColorModeValue('orange.100', 'gray.700')}
         fontSize={{ base: 'lg', lg: 'xl' }}
         paddingX={3}
         paddingY={1}

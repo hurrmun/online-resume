@@ -3,7 +3,6 @@ import {
   chakra,
   Image,
   Text,
-  VStack,
   Flex,
   Grid,
   useColorModeValue,
@@ -13,6 +12,7 @@ import {
   HStack,
   Link,
   IconButton,
+  AspectRatio,
 } from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
 import { FaGithub, FaLaptopCode } from 'react-icons/fa';
@@ -24,7 +24,7 @@ const ChakraBox = chakra(motion.div, {
 });
 
 const TechTag = ({ tag }: { tag: string }) => (
-  <Tag bg={useColorModeValue('orange.100', 'gray.800')}>{tag}</Tag>
+  <Tag bg={useColorModeValue('orange.200', 'gray.800')}>{tag}</Tag>
 );
 const Card = ({
   name,
@@ -46,16 +46,18 @@ const Card = ({
   return (
     <GridItem
       colSpan={1}
-      bg={useColorModeValue('orange.200', 'gray.700')}
+      bg={useColorModeValue('orange.100', 'gray.700')}
       borderRadius='xl'
       padding={6}
     >
-      <Image
-        objectFit='cover'
-        src={imageSrc}
-        alt={`${name} image`}
-        borderRadius='xl'
-      />
+      <AspectRatio ratio={16 / 9} alignSelf='top'>
+        <Image
+          objectFit='cover'
+          src={imageSrc}
+          alt={`${name} image`}
+          borderRadius='xl'
+        />
+      </AspectRatio>
       <Box marginTop={4} marginBottom={2}>
         <Heading fontSize={{ base: 'xl', lg: '3xl' }}>{name}</Heading>
         <Text fontSize={{ base: 'lg', lg: 'xl' }} fontStyle='italic'>
@@ -89,7 +91,7 @@ const Card = ({
             variant='outline'
             borderColor={useColorModeValue('yellow.900', 'white')}
             _hover={{
-              bg: useColorModeValue('orange.300', 'gray.800'),
+              bg: useColorModeValue('orange.200', 'gray.800'),
             }}
           />
         </Link>
@@ -107,7 +109,7 @@ const Card = ({
             variant='outline'
             borderColor={useColorModeValue('yellow.900', 'white')}
             _hover={{
-              bg: useColorModeValue('orange.300', 'gray.800'),
+              bg: useColorModeValue('orange.200', 'gray.800'),
             }}
           />
         </Link>
