@@ -87,8 +87,8 @@ export const education = [
 
 export const projects = [
   {
-    name: 'Financial Independence Calculator',
-    affiliation: 'Personal Project',
+    name: 'Financial Estimator',
+    affiliation: 'Compound Interest Calculator for Multiple Accounts',
     description:
       'Compound interest calculator for multiple accounts, created to track your net worth after investing over time. Application calculates and displays information by year in a line chart for easy viewing.',
     tags: [
@@ -142,9 +142,9 @@ export const projects = [
   },
   {
     name: '2048 Game Clone',
-    affiliation: 'Clone of the hit mobile classic',
+    affiliation: 'Recreation of the hit mobile classic',
     description:
-      'Recreation of the popular 2048 game using javascript logic. Made using html, css, javascript, jquery and bootstrap and deployed with Vercel.',
+      'My attempt to recreate the popular 2048 game using javascript logic, including features to reset/ restart game, track high-score, and win and lose condition. Made using html, css, javascript, jquery, bootstrap and deployed with Vercel.',
     tags: ['Javascript', 'JQuery', 'Game', 'Bootstrap'],
     imageSrc: game2048screen,
     github: 'https://github.com/hurrmun/2048GameClone',

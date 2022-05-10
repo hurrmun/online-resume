@@ -13,8 +13,18 @@ import {
   Link,
   IconButton,
   AspectRatio,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  Button,
+  useDisclosure,
 } from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
+import { useState } from 'react';
 import { FaGithub, FaLaptopCode } from 'react-icons/fa';
 import { projects } from '../data/content';
 import { container, item } from './animations';
@@ -34,6 +44,8 @@ const Card = ({
   tags,
   github,
   deployment,
+  setModalContent,
+  onOpen,
 }: {
   name: string;
   affiliation: string;
@@ -42,6 +54,8 @@ const Card = ({
   imageSrc: string;
   github?: string;
   deployment?: string;
+  setModalContent: Function;
+  onOpen: () => void;
 }) => {
   return (
     <GridItem
@@ -50,12 +64,25 @@ const Card = ({
       borderRadius='xl'
       padding={6}
     >
-      <AspectRatio ratio={16 / 9} alignSelf='top'>
+      <AspectRatio ratio={2 / 1} alignSelf='top'>
         <Image
           objectFit='cover'
           src={imageSrc}
           alt={`${name} image`}
           borderRadius='xl'
+          _hover={{ cursor: 'pointer' }}
+          onClick={() => {
+            setModalContent({
+              name,
+              affiliation,
+              description,
+              imageSrc,
+              tags,
+              github,
+              deployment,
+            });
+            onOpen();
+          }}
         />
       </AspectRatio>
       <Box marginTop={4} marginBottom={2}>
@@ -118,7 +145,28 @@ const Card = ({
   );
 };
 
+export interface modalContent {
+  name: string;
+  affiliation: string;
+  description: string;
+  tags: string[];
+  imageSrc: string;
+  github?: string;
+  deployment?: string;
+}
+
 export default function Projects() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [modalContent, setModalContent] = useState<modalContent>({
+    name: 'string',
+    affiliation: '',
+    description: '',
+    tags: [],
+    imageSrc: '',
+    github: '',
+    deployment: '',
+  });
+
   return (
     <ChakraBox variants={container} marginTop={{ base: 20, lg: 32 }}>
       <Heading
@@ -142,10 +190,97 @@ export default function Projects() {
       >
         {projects.map(({ ...props }, index) => (
           <ChakraBox key={props.name} variants={item}>
-            <Card {...props} />
+            <Card
+              {...props}
+              setModalContent={setModalContent}
+              onOpen={onOpen}
+            />
           </ChakraBox>
         ))}
       </Grid>
+
+      <Modal isOpen={isOpen} onClose={onClose} size='full'>
+        <ModalOverlay />
+        <ModalContent
+          bg={useColorModeValue('orange.50', 'gray.800')}
+          color={useColorModeValue('yellow.900', 'white')}
+        >
+          <ModalHeader>{modalContent.name}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Image
+              objectFit='cover'
+              src={modalContent.imageSrc}
+              alt={`${modalContent.name} image`}
+              borderRadius='xl'
+            />
+            <Box marginTop={4} marginBottom={2}>
+              <Text fontSize={{ base: 'lg', lg: 'xl' }} fontStyle='italic'>
+                {modalContent.affiliation}
+              </Text>
+              <Flex flexWrap='wrap' gap={1} marginTop={1}>
+                {modalContent.tags.map((tag) => (
+                  <TechTag tag={tag} />
+                ))}
+              </Flex>
+            </Box>
+            <Text
+              fontSize={{ base: 'md', lg: 'lg' }}
+              overflow='scroll'
+              textOverflow='clip'
+            >
+              {modalContent.description}
+            </Text>
+          </ModalBody>
+
+          <ModalFooter display='flex' justifyContent='space-between'>
+            <HStack paddingY={3}>
+              <Link
+                href={modalContent.github}
+                _hover={{
+                  textDecoration: 'none',
+                }}
+                target='_blank'
+                display={Boolean(modalContent.github) ? 'block' : 'none'}
+              >
+                <IconButton
+                  aria-label={`${modalContent.name} github repository`}
+                  icon={<FaGithub />}
+                  variant='outline'
+                  borderColor={useColorModeValue('yellow.900', 'white')}
+                  _hover={{
+                    bg: useColorModeValue('orange.200', 'gray.800'),
+                  }}
+                />
+              </Link>
+              <Link
+                href={modalContent.deployment}
+                _hover={{
+                  textDecoration: 'none',
+                }}
+                target='_blank'
+                display={Boolean(modalContent.deployment) ? 'block' : 'none'}
+              >
+                <IconButton
+                  aria-label={`${modalContent.name} website`}
+                  icon={<FaLaptopCode />}
+                  variant='outline'
+                  borderColor={useColorModeValue('yellow.900', 'white')}
+                  _hover={{
+                    bg: useColorModeValue('orange.200', 'gray.800'),
+                  }}
+                />
+              </Link>
+            </HStack>
+            <Button
+              bg={useColorModeValue('orange.200', 'gray.800')}
+              onClick={onClose}
+            >
+              Close
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </ChakraBox>
   );
 }

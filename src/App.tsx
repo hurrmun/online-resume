@@ -12,7 +12,6 @@ function App() {
     <Box
       bg={useColorModeValue('orange.50', 'gray.800')}
       color={useColorModeValue('yellow.900', 'white')}
-      minH=' 200vh'
     >
       <Nav />
       <Container maxW='7xl'>
