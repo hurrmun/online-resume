@@ -96,13 +96,7 @@ const Card = ({
           ))}
         </Flex>
       </Box>
-      <Text
-        fontSize={{ base: 'md', lg: 'lg' }}
-        overflow='scroll'
-        overflowY='clip'
-      >
-        {description}
-      </Text>
+      <Text fontSize={{ base: 'md', lg: 'lg' }}>{description}</Text>
       <HStack paddingY={3}>
         <Link
           href={github}
