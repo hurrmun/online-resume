@@ -99,7 +99,7 @@ const Card = ({
       <Text
         fontSize={{ base: 'md', lg: 'lg' }}
         overflow='scroll'
-        textOverflow='clip'
+        overflowY='clip'
       >
         {description}
       </Text>
@@ -202,7 +202,7 @@ export default function Projects() {
       <Modal isOpen={isOpen} onClose={onClose} size='full'>
         <ModalOverlay />
         <ModalContent
-          bg={useColorModeValue('orange.50', 'gray.700')}
+          bg={useColorModeValue('orange.100', 'gray.700')}
           color={useColorModeValue('yellow.900', 'white')}
         >
           <ModalHeader fontSize={{ base: 'xl', lg: '3xl' }} fontWeight='bold'>
@@ -226,11 +226,7 @@ export default function Projects() {
                 ))}
               </Flex>
             </Box>
-            <Text
-              fontSize={{ base: 'md', lg: 'lg' }}
-              overflow='scroll'
-              textOverflow='clip'
-            >
+            <Text fontSize={{ base: 'md', lg: 'lg' }}>
               {modalContent.description}
             </Text>
           </ModalBody>
@@ -275,7 +271,7 @@ export default function Projects() {
               </Link>
             </HStack>
             <Button
-              bg={useColorModeValue('orange.50', 'gray.700')}
+              bg={useColorModeValue('orange.100', 'gray.700')}
               onClick={onClose}
               _hover={{
                 bg: useColorModeValue('orange.200', 'gray.800'),
