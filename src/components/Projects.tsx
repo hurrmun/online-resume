@@ -204,25 +204,34 @@ export default function Projects() {
           </ModalHeader>
           <ModalCloseButton size='lg' />
           <ModalBody>
-            <Image
-              objectFit='cover'
-              src={modalContent.imageSrc}
-              alt={`${modalContent.name} image`}
-              borderRadius='xl'
-            />
-            <Box marginTop={4} marginBottom={2}>
-              <Text fontSize={{ base: 'lg', lg: 'xl' }} fontStyle='italic'>
+            <Flex
+              justifyContent='center'
+              flexDirection='column'
+              alignItems='center'
+            >
+              <Image
+                objectFit='cover'
+                src={modalContent.imageSrc}
+                alt={`${modalContent.name} image`}
+                borderRadius='xl'
+              />
+              <Text
+                fontSize={{ base: 'lg', lg: 'xl' }}
+                fontStyle='italic'
+                marginTop={4}
+                marginBottom={2}
+              >
                 {modalContent.affiliation}
               </Text>
-              <Flex flexWrap='wrap' gap={1} marginTop={1}>
+              <Flex flexWrap='wrap' gap={1} marginBottom={2}>
                 {modalContent.tags.map((tag) => (
                   <TechTag tag={tag} />
                 ))}
               </Flex>
-            </Box>
-            <Text fontSize={{ base: 'md', lg: 'lg' }}>
-              {modalContent.description}
-            </Text>
+              <Text fontSize={{ base: 'md', lg: 'lg' }}>
+                {modalContent.description}
+              </Text>
+            </Flex>
           </ModalBody>
 
           <ModalFooter display='flex' justifyContent='space-between'>
