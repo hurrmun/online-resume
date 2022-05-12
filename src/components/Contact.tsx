@@ -8,12 +8,14 @@ import {
   GridItem,
   Heading,
   Input,
+  Text,
   Textarea,
   useColorModeValue,
   VStack,
 } from '@chakra-ui/react';
 import { isValidMotionProp, motion } from 'framer-motion';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { itemReverse } from './animations';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
@@ -44,6 +46,21 @@ export default function Contact() {
       >
         Contact Me
       </Heading>
+      <ChakraBox
+        variants={itemReverse}
+        bg={useColorModeValue('orange.100', 'gray.700')}
+        marginBottom={5}
+        width='full'
+        paddingX={6}
+        paddingY={8}
+        borderRadius='xl'
+      >
+        <Text fontSize={{ base: 'lg', lg: '2xl' }} fontWeight='light'>
+          If you have any enquiries about me or just want to have a chat, please
+          drop me an email at <b>hermanlyx@gmail.com</b> or leave a message down
+          below!
+        </Text>
+      </ChakraBox>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid templateColumns='repeat(3, 1fr)' gap={4}>
           <GridItem
@@ -57,7 +74,8 @@ export default function Contact() {
                 <Input
                   id='name'
                   placeholder='name'
-                  focusBorderColor='#ffffff40'
+                  borderColor={useColorModeValue('yellow.900', 'gray.600')}
+                  focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
                   {...register('name')}
                 />
                 <FormLabel
@@ -74,7 +92,8 @@ export default function Contact() {
                 <Input
                   id='name'
                   placeholder='affiliation'
-                  focusBorderColor='#ffffff40'
+                  borderColor={useColorModeValue('yellow.900', 'gray.600')}
+                  focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
                   {...register('name')}
                 />
                 <FormLabel
@@ -91,7 +110,8 @@ export default function Contact() {
                 <Input
                   id='name'
                   placeholder='email'
-                  focusBorderColor='#ffffff40'
+                  borderColor={useColorModeValue('yellow.900', 'gray.600')}
+                  focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
                   {...register('name')}
                 />
                 <FormLabel
@@ -108,7 +128,8 @@ export default function Contact() {
                 <Input
                   id='name'
                   placeholder='email'
-                  focusBorderColor='#ffffff40'
+                  borderColor={useColorModeValue('yellow.900', 'gray.600')}
+                  focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
                   {...register('name')}
                 />
                 <FormLabel
@@ -134,7 +155,8 @@ export default function Contact() {
                 <Input
                   id='name'
                   placeholder='email'
-                  focusBorderColor='#ffffff40'
+                  borderColor={useColorModeValue('yellow.900', 'gray.600')}
+                  focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
                   {...register('name')}
                   marginBottom='2px'
                 />
@@ -152,8 +174,9 @@ export default function Contact() {
                 <Textarea
                   id='name'
                   placeholder='message'
+                  borderColor={useColorModeValue('yellow.900', 'gray.600')}
+                  focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
                   {...register('message')}
-                  focusBorderColor='#ffffff40'
                   rows={6}
                 />
                 <FormLabel
