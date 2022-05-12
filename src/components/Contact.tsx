@@ -78,6 +78,13 @@ export default function Contact() {
                 <Input
                   id='name'
                   placeholder='name'
+                  _placeholder={{
+                    color: useColorModeValue('yellow.800', 'white'),
+                    opacity: 0.5,
+                  }}
+                  _hover={{
+                    borderColor: useColorModeValue('yellow.500', 'gray.300'),
+                  }}
                   borderColor={useColorModeValue('yellow.900', 'gray.600')}
                   focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
                   {...register('name')}
@@ -100,6 +107,13 @@ export default function Contact() {
                 <Input
                   id='affiliation'
                   placeholder='affiliation'
+                  _placeholder={{
+                    color: useColorModeValue('yellow.800', 'white'),
+                    opacity: 0.5,
+                  }}
+                  _hover={{
+                    borderColor: useColorModeValue('yellow.500', 'gray.300'),
+                  }}
                   borderColor={useColorModeValue('yellow.900', 'gray.600')}
                   focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
                   {...register('affiliation')}
@@ -119,6 +133,13 @@ export default function Contact() {
                 <Input
                   id='email'
                   placeholder='email'
+                  _placeholder={{
+                    color: useColorModeValue('yellow.800', 'white'),
+                    opacity: 0.5,
+                  }}
+                  _hover={{
+                    borderColor: useColorModeValue('yellow.500', 'gray.300'),
+                  }}
                   borderColor={useColorModeValue('yellow.900', 'gray.600')}
                   focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
                   {...register('email')}
@@ -138,6 +159,13 @@ export default function Contact() {
                 <Input
                   id='phone'
                   placeholder='phone'
+                  _placeholder={{
+                    color: useColorModeValue('yellow.800', 'white'),
+                    opacity: 0.5,
+                  }}
+                  _hover={{
+                    borderColor: useColorModeValue('yellow.500', 'gray.300'),
+                  }}
                   borderColor={useColorModeValue('yellow.900', 'gray.600')}
                   focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
                   {...register('phone')}
@@ -165,6 +193,13 @@ export default function Contact() {
                 <Input
                   id='subject'
                   placeholder='subject'
+                  _placeholder={{
+                    color: useColorModeValue('yellow.800', 'white'),
+                    opacity: 0.5,
+                  }}
+                  _hover={{
+                    borderColor: useColorModeValue('yellow.500', 'gray.300'),
+                  }}
                   borderColor={useColorModeValue('yellow.900', 'gray.600')}
                   focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
                   {...register('subject')}
@@ -184,6 +219,13 @@ export default function Contact() {
                 <Textarea
                   id='formMessage'
                   placeholder='message'
+                  _placeholder={{
+                    color: useColorModeValue('yellow.800', 'white'),
+                    opacity: 0.5,
+                  }}
+                  _hover={{
+                    borderColor: useColorModeValue('yellow.500', 'gray.300'),
+                  }}
                   borderColor={useColorModeValue('yellow.900', 'gray.600')}
                   focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
                   {...register('formMessage')}
@@ -204,7 +246,7 @@ export default function Contact() {
           </GridItem>
         </Grid>
         <Button
-          mt={4}
+          marginTop={5}
           bg={useColorModeValue('orange.200', 'gray.700')}
           color={useColorModeValue('yellow.800', 'white')}
           _hover={{ bg: useColorModeValue('orange.300', 'gray.600') }}

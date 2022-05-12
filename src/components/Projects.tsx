@@ -22,6 +22,7 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
+  Container,
 } from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
 import { useState } from 'react';
@@ -228,9 +229,11 @@ export default function Projects() {
                   <TechTag tag={tag} />
                 ))}
               </Flex>
-              <Text fontSize={{ base: 'md', lg: 'lg' }}>
-                {modalContent.description}
-              </Text>
+              <Container maxW='4xl' paddingX={0}>
+                <Text fontSize={{ base: 'md', lg: 'lg' }}>
+                  {modalContent.description}
+                </Text>
+              </Container>
             </Flex>
           </ModalBody>
 

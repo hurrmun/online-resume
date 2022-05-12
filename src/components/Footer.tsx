@@ -62,7 +62,7 @@ export default function Footer() {
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}
       >
-        <Flex gap={2}>
+        <Flex gap={2} flexDirection={{ base: 'column', md: 'row' }}>
           <Text>© 2022 Herman Loh Online Resume</Text>
           <Link
             href='https://github.com/hurrmun/online-resume'
