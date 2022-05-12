@@ -23,7 +23,11 @@ const ChakraBox = chakra(motion.div, {
 
 type Inputs = {
   name: string;
-  message: string;
+  affiliation: string;
+  email: string;
+  phone: string;
+  subject: string;
+  formMessage: string;
 };
 
 export default function Contact() {
@@ -88,58 +92,64 @@ export default function Contact() {
                   {errors.name && errors.name.message}
                 </FormErrorMessage>
               </FormControl>
-              <FormControl variant='floating' isInvalid={Boolean(errors.name)}>
+
+              <FormControl
+                variant='floating'
+                isInvalid={Boolean(errors.affiliation)}
+              >
                 <Input
-                  id='name'
+                  id='affiliation'
                   placeholder='affiliation'
                   borderColor={useColorModeValue('yellow.900', 'gray.600')}
                   focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
-                  {...register('name')}
+                  {...register('affiliation')}
                 />
                 <FormLabel
-                  htmlFor='name'
+                  htmlFor='affiliation'
                   bg={useColorModeValue('orange.50', 'gray.800')}
                 >
                   Affiliation
                 </FormLabel>
                 <FormErrorMessage>
-                  {errors.name && errors.name.message}
+                  {errors.affiliation && errors.affiliation.message}
                 </FormErrorMessage>
               </FormControl>
-              <FormControl variant='floating' isInvalid={Boolean(errors.name)}>
+
+              <FormControl variant='floating' isInvalid={Boolean(errors.email)}>
                 <Input
-                  id='name'
+                  id='email'
                   placeholder='email'
                   borderColor={useColorModeValue('yellow.900', 'gray.600')}
                   focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
-                  {...register('name')}
+                  {...register('email')}
                 />
                 <FormLabel
-                  htmlFor='name'
+                  htmlFor='email'
                   bg={useColorModeValue('orange.50', 'gray.800')}
                 >
                   Email
                 </FormLabel>
                 <FormErrorMessage>
-                  {errors.name && errors.name.message}
+                  {errors.email && errors.email.message}
                 </FormErrorMessage>
               </FormControl>
+
               <FormControl variant='floating' isInvalid={Boolean(errors.name)}>
                 <Input
-                  id='name'
-                  placeholder='email'
+                  id='phone'
+                  placeholder='phone'
                   borderColor={useColorModeValue('yellow.900', 'gray.600')}
                   focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
-                  {...register('name')}
+                  {...register('phone')}
                 />
                 <FormLabel
-                  htmlFor='name'
+                  htmlFor='phone'
                   bg={useColorModeValue('orange.50', 'gray.800')}
                 >
                   Phone Number (optional)
                 </FormLabel>
                 <FormErrorMessage>
-                  {errors.name && errors.name.message}
+                  {errors.phone && errors.phone.message}
                 </FormErrorMessage>
               </FormControl>
             </VStack>
@@ -153,47 +163,55 @@ export default function Contact() {
             <VStack gap={2}>
               <FormControl variant='floating' isInvalid={Boolean(errors.name)}>
                 <Input
-                  id='name'
-                  placeholder='email'
+                  id='subject'
+                  placeholder='subject'
                   borderColor={useColorModeValue('yellow.900', 'gray.600')}
                   focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
-                  {...register('name')}
+                  {...register('subject')}
                   marginBottom='2px'
                 />
                 <FormLabel
-                  htmlFor='name'
+                  htmlFor='subject'
                   bg={useColorModeValue('orange.50', 'gray.800')}
                 >
                   Subject
                 </FormLabel>
                 <FormErrorMessage>
-                  {errors.name && errors.name.message}
+                  {errors.subject && errors.subject.message}
                 </FormErrorMessage>
               </FormControl>
               <FormControl variant='floating' isInvalid={Boolean(errors.name)}>
                 <Textarea
-                  id='name'
+                  id='formMessage'
                   placeholder='message'
                   borderColor={useColorModeValue('yellow.900', 'gray.600')}
                   focusBorderColor={useColorModeValue('orange.700', 'gray.400')}
-                  {...register('message')}
+                  {...register('formMessage')}
                   rows={6}
                 />
                 <FormLabel
-                  htmlFor='name'
+                  htmlFor='formMessage'
                   bg={useColorModeValue('orange.50', 'gray.800')}
                 >
                   Message
                 </FormLabel>
 
                 <FormErrorMessage>
-                  {errors.name && errors.name.message}
+                  {errors.formMessage && errors.formMessage.message}
                 </FormErrorMessage>
               </FormControl>
             </VStack>
           </GridItem>
         </Grid>
-        <Button mt={4} isLoading={isSubmitting} isFullWidth type='submit'>
+        <Button
+          mt={4}
+          bg={useColorModeValue('orange.200', 'gray.700')}
+          color={useColorModeValue('yellow.800', 'white')}
+          _hover={{ bg: useColorModeValue('orange.300', 'gray.600') }}
+          isLoading={isSubmitting}
+          isFullWidth
+          type='submit'
+        >
           Submit
         </Button>
       </form>

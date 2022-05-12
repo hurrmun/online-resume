@@ -92,7 +92,7 @@ const Card = ({
         </Text>
         <Flex flexWrap='wrap' gap={1} marginTop={1}>
           {tags.map((tag) => (
-            <TechTag tag={tag} />
+            <TechTag key={tag} tag={tag} />
           ))}
         </Flex>
       </Box>
