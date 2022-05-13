@@ -226,7 +226,7 @@ export default function Projects() {
               </Text>
               <Flex flexWrap='wrap' gap={1} marginBottom={2}>
                 {modalContent.tags.map((tag) => (
-                  <TechTag tag={tag} />
+                  <TechTag key={tag} tag={tag} />
                 ))}
               </Flex>
               <Container maxW='4xl' paddingX={0}>

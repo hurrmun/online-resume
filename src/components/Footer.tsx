@@ -2,7 +2,6 @@ import {
   Box,
   chakra,
   Container,
-  Flex,
   Link,
   Stack,
   Text,
@@ -62,16 +61,13 @@ export default function Footer() {
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}
       >
-        <Flex gap={2} flexDirection={{ base: 'column', md: 'row' }}>
-          <Text>© 2022 Herman Loh Online Resume</Text>
-          <Link
-            href='https://github.com/hurrmun/online-resume'
-            fontStyle='italic'
-            target='_blank'
-          >
-            github.com/hurrmun/online-resume
-          </Link>
-        </Flex>
+        <Link
+          href='https://github.com/hurrmun/online-resume'
+          fontStyle='italic'
+          target='_blank'
+        >
+          © 2022 Herman Loh Online Resume
+        </Link>
         <Stack direction={'row'} spacing={6}>
           <SocialButton label={'LinkedIn'} href={'https://github.com/hurrmun'}>
             <FaLinkedin />

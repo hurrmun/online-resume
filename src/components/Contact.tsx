@@ -8,6 +8,7 @@ import {
   GridItem,
   Heading,
   Input,
+  Link,
   Text,
   Textarea,
   useColorModeValue,
@@ -65,8 +66,16 @@ export default function Contact() {
       >
         <Text fontSize={{ base: 'lg', lg: '2xl' }} fontWeight='light'>
           If you have any enquiries about me or just want to have a chat, please
-          drop me an email at <b>hermanlyx@gmail.com</b> or leave a message down
-          below!
+          drop me an email at <Text as='b'>hermanlyx@gmail.com</Text>, drop me a
+          message on{' '}
+          <Link
+            href='https://www.linkedin.com/in/hermanlyx/'
+            textDecoration='underline'
+            target='_blank'
+          >
+            linkedIn
+          </Link>{' '}
+          or leave a message down below!
         </Text>
       </ChakraBox>
       <form onSubmit={handleSubmit(onSubmit)}>
