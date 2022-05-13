@@ -27,8 +27,8 @@ import {
 import { motion, isValidMotionProp } from 'framer-motion';
 import { useState } from 'react';
 import { FaGithub, FaLaptopCode } from 'react-icons/fa';
-import { projects } from '../data/content';
-import { container, item } from './animations';
+import { projects } from '../misc/content';
+import { container, item } from '../misc/animations';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
@@ -64,6 +64,7 @@ const Card = ({
       bg={useColorModeValue('orange.100', 'gray.700')}
       borderRadius='xl'
       padding={6}
+      h='100%'
     >
       <AspectRatio ratio={2 / 1} alignSelf='top'>
         <Image
@@ -181,7 +182,6 @@ export default function Projects() {
           lg: 'repeat(3, 1fr)',
         }}
         gap={{ base: 4, lg: 6 }}
-        alignItems='top'
       >
         {projects.map(({ ...props }, index) => (
           <ChakraBox key={props.name} variants={item}>

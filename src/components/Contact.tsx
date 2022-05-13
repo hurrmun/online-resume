@@ -17,8 +17,8 @@ import {
 import { yupResolver } from '@hookform/resolvers/yup';
 import { isValidMotionProp, motion } from 'framer-motion';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { contactSchema } from '../data/formValidation';
-import { itemReverse } from './animations';
+import { contactSchema } from '../misc/formValidation';
+import { itemReverse } from '../misc/animations';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',

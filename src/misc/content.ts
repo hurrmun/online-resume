@@ -108,7 +108,7 @@ export const projects = [
     affiliation: 'Hack for Public Good Hackathon by OGP',
     description:
       'Full-Stack quiz builder and taker web application. Led creation of design screens for landing page, quiz taker & quiz maker flow using the OGP design system. Built to solve real problems that government officers are facing.',
-    tags: ['Typescript', 'React', 'Chakra UI'],
+    tags: ['Typescript', 'React', 'Chakra UI', 'Hackathon'],
     imageSrc: quizsgScreen,
     github: 'https://github.com/opengovsg/quizSG',
   },
@@ -116,10 +116,11 @@ export const projects = [
     name: 'Daily Report',
     affiliation: 'Report App Concept for Concrete Supplier',
     description:
-      'Full-Stack application created to optimize a real use case of writing reports for material supplies on an excel spreadsheet. Implemented with login authentication, secure password hashing, and validation.',
+      'Full-Stack MERN application created to optimize a real use case of writing reports for material supplies on an excel spreadsheet. Implemented with login authentication, secure password hashing, and validation.',
     tags: [
       'Javascript',
       'React',
+      'TailwindCSS',
       'Node.js',
       'PostgreSQL',
       'knex',

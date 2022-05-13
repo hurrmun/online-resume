@@ -11,8 +11,8 @@ import {
 } from '@chakra-ui/react';
 import { TriangleDownIcon, DownloadIcon } from '@chakra-ui/icons';
 import { motion, isValidMotionProp } from 'framer-motion';
-import { COPYWRITE } from '../data/copywrite';
-import { container, item, itemReverse } from './animations';
+import { COPYWRITE } from '../misc/copywrite';
+import { container, item, itemReverse } from '../misc/animations';
 import resume from '../files/herman-resume.pdf';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 

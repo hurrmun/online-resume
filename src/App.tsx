@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, useColorModeValue, Container } from '@chakra-ui/react';
+import { Box, useColorModeValue, Container } from '@chakra-ui/react';
 import Nav from './components/Nav';
 import About from './components/About';
 import Skills from './components/Skills';

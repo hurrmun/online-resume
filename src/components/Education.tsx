@@ -8,8 +8,8 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
-import { education } from '../data/content';
-import { container, item } from './animations';
+import { education } from '../misc/content';
+import { container, item } from '../misc/animations';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',

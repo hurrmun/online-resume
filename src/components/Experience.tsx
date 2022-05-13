@@ -14,8 +14,8 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
-import { workExperience } from '../data/content';
-import { container, item } from './animations';
+import { workExperience } from '../misc/content';
+import { container, item } from '../misc/animations';
 
 const Card = ({
   companyName,

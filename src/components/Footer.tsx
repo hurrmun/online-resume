@@ -4,7 +4,6 @@ import {
   Container,
   Link,
   Stack,
-  Text,
   useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react';
