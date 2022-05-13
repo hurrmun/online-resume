@@ -13,8 +13,10 @@ import {
   useColorModeValue,
   VStack,
 } from '@chakra-ui/react';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { isValidMotionProp, motion } from 'framer-motion';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { contactSchema } from '../data/formValidation';
 import { itemReverse } from './animations';
 
 const ChakraBox = chakra(motion.div, {
@@ -35,7 +37,9 @@ export default function Contact() {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<Inputs>();
+  } = useForm<Inputs>({
+    resolver: yupResolver(contactSchema),
+  });
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
@@ -53,7 +57,7 @@ export default function Contact() {
       <ChakraBox
         variants={itemReverse}
         bg={useColorModeValue('orange.100', 'gray.700')}
-        marginBottom={5}
+        marginBottom={8}
         width='full'
         paddingX={6}
         paddingY={8}
@@ -122,7 +126,7 @@ export default function Contact() {
                   htmlFor='affiliation'
                   bg={useColorModeValue('orange.50', 'gray.800')}
                 >
-                  Affiliation
+                  Affiliation (optional)
                 </FormLabel>
                 <FormErrorMessage>
                   {errors.affiliation && errors.affiliation.message}
@@ -155,7 +159,7 @@ export default function Contact() {
                 </FormErrorMessage>
               </FormControl>
 
-              <FormControl variant='floating' isInvalid={Boolean(errors.name)}>
+              <FormControl variant='floating' isInvalid={Boolean(errors.phone)}>
                 <Input
                   id='phone'
                   placeholder='phone'
@@ -189,7 +193,10 @@ export default function Contact() {
             }}
           >
             <VStack gap={2}>
-              <FormControl variant='floating' isInvalid={Boolean(errors.name)}>
+              <FormControl
+                variant='floating'
+                isInvalid={Boolean(errors.subject)}
+              >
                 <Input
                   id='subject'
                   placeholder='subject'
@@ -215,7 +222,11 @@ export default function Contact() {
                   {errors.subject && errors.subject.message}
                 </FormErrorMessage>
               </FormControl>
-              <FormControl variant='floating' isInvalid={Boolean(errors.name)}>
+
+              <FormControl
+                variant='floating'
+                isInvalid={Boolean(errors.formMessage)}
+              >
                 <Textarea
                   id='formMessage'
                   placeholder='message'
