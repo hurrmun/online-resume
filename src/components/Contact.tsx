@@ -64,10 +64,14 @@ export default function Contact() {
         paddingY={8}
         borderRadius='xl'
       >
-        <Text fontSize={{ base: 'lg', lg: '2xl' }} fontWeight='light'>
-          If you have any enquiries about me or just want to have a chat, please
-          drop me an email at <Text as='b'>hermanlyx@gmail.com</Text>, drop me a
-          message on{' '}
+        <Text
+          fontSize={{ base: 'lg', lg: '2xl' }}
+          fontWeight='light'
+          textAlign='center'
+        >
+          If you have any enquiries for me or want to have a chat, you can
+          either drop me an email at <Text as='b'>hermanlyx@gmail.com</Text>,
+          connect with me on{' '}
           <Link
             href='https://www.linkedin.com/in/hermanlyx/'
             textDecoration='underline'
