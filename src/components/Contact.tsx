@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {
   Button,
   chakra,
@@ -37,11 +38,49 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    reset,
+    formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<Inputs>({
     resolver: yupResolver(contactSchema),
   });
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+
+  type submitData = {
+    to: string;
+    from: string;
+    subject: string;
+    html: string;
+  };
+
+  const submitForm = (email: submitData) => {
+    // send message
+  };
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const transformed = {
+      to: 'hermanlyx@gmail.com',
+      from: data.email,
+      subject: `Message from resume site: ${data.subject}`,
+      html: `
+        <p><strong>Name: ${data.name}</strong></p>
+        <p><strong>Affiliation: ${data.affiliation}</strong></p>
+        <p>${data.formMessage}</p>
+      `,
+    };
+    submitForm(transformed);
+  };
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset({
+        name: '',
+        affiliation: '',
+        email: '',
+        phone: '',
+        subject: '',
+        formMessage: '',
+      });
+    }
+  }, [isSubmitSuccessful, reset]);
 
   return (
     <ChakraBox>
