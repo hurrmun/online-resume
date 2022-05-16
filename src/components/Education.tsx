@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
 import { education } from '../misc/content';
-import { container, item } from '../misc/animations';
+import { item } from '../misc/animations';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',

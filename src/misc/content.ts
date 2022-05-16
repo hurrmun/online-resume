@@ -41,7 +41,7 @@ export const workExperience = [
     role: 'Associate Software Engineer',
     duration: 'March 2022 to Present',
     description:
-      'Implemented UI using front-end libraries such as React, Redux, Redux Toolkit, React Hook Forms, and MUI. Unit, functional testing, and bug fixing for various UI components using Jest and React Testing Library.',
+      'Implemented UI using React and various libraries. Unit, functional testing, and bug fixing for various components using Jest and React Testing Library. Worked in AGILE environment, with CI/CD over multiple sprints along with integrating new Back-End APIs.',
     imageSrc: ufinityLogo,
   },
   {

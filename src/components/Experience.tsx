@@ -33,7 +33,7 @@ const Card = ({
 
   const [seeMore, setSeeMore] = useState(false);
   const [cardContent, setCardContent] = useState({
-    lines: 3,
+    lines: 4,
     expandText: 'See More',
   });
 
@@ -41,7 +41,7 @@ const Card = ({
     if (seeMore) {
       setCardContent({ lines: 10, expandText: 'See Less' });
     } else {
-      setCardContent({ lines: 3, expandText: 'See More' });
+      setCardContent({ lines: 4, expandText: 'See More' });
     }
   }, [seeMore]);
 
