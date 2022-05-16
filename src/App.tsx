@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, useColorModeValue, Container } from '@chakra-ui/react';
+import { Element } from 'react-scroll';
 import Nav from './components/Nav';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -17,12 +18,24 @@ function App() {
     >
       <Nav />
       <Container maxW='7xl'>
-        <About />
-        <Skills />
-        <Experience />
-        <Education />
-        <Projects />
-        <Contact />
+        <Element name='about'>
+          <About />
+        </Element>
+        <Element name='skills'>
+          <Skills />
+        </Element>
+        <Element name='experience'>
+          <Experience />
+        </Element>
+        <Element name='education'>
+          <Education />
+        </Element>
+        <Element name='projects'>
+          <Projects />
+        </Element>
+        <Element name='contact'>
+          <Contact />
+        </Element>
       </Container>
       <Footer />
     </Box>

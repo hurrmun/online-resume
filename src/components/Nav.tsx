@@ -24,22 +24,39 @@ import { DownloadIcon } from '@chakra-ui/icons';
 import { MoonIcon, SunIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import resume from '../files/herman-resume.pdf';
+import { scroller } from 'react-scroll';
 
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
+const NavLink = ({
+  children,
+  section,
+  close = () => null,
+}: {
+  children: ReactNode;
+  section: string;
+  close?: () => void;
+}) => (
+  <Box
     px={2}
     py={1}
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('orange.200', 'gray.700'),
+      cursor: 'pointer',
+      bg: useColorModeValue('orange.200', 'gray.800'),
     }}
-    href={'#'}
     textTransform='lowercase'
     fontWeight='bold'
+    onClick={() => {
+      scroller.scrollTo(section, {
+        duration: 1000,
+        smooth: true,
+        offset: -100,
+      });
+      close();
+    }}
   >
     {children}
-  </Link>
+  </Box>
 );
 
 export default function Nav() {
@@ -68,12 +85,12 @@ export default function Nav() {
               alignItems='center'
               textAlign='center'
             >
-              <NavLink children='About Me' />
-              <NavLink children='Skills' />
-              <NavLink children='Experience' />
-              <NavLink children='Education' />
-              <NavLink children='Projects' />
-              <NavLink children='Contact' />
+              <NavLink children='About Me' section='about' />
+              <NavLink children='Skills' section='skills' />
+              <NavLink children='Experience' section='experience' />
+              <NavLink children='Education' section='education' />
+              <NavLink children='Projects' section='projects' />
+              <NavLink children='Contact' section='contact' />
             </Stack>
           </Show>
           <Stack direction='row' spacing={3}>
@@ -113,12 +130,36 @@ export default function Nav() {
                 </DrawerHeader>
                 <DrawerBody>
                   <Stack direction='column' spacing={[4, 4, 7]}>
-                    <NavLink children='About Me' />
-                    <NavLink children='Skills' />
-                    <NavLink children='Experience' />
-                    <NavLink children='Education' />
-                    <NavLink children='Projects' />
-                    <NavLink children='Contact' />
+                    <NavLink
+                      children='About Me'
+                      section='about'
+                      close={onClose}
+                    />
+                    <NavLink
+                      children='Skills'
+                      section='skills'
+                      close={onClose}
+                    />
+                    <NavLink
+                      children='Experience'
+                      section='experience'
+                      close={onClose}
+                    />
+                    <NavLink
+                      children='Education'
+                      section='education'
+                      close={onClose}
+                    />
+                    <NavLink
+                      children='Projects'
+                      section='projects'
+                      close={onClose}
+                    />
+                    <NavLink
+                      children='Contact'
+                      section='contact'
+                      close={onClose}
+                    />
                   </Stack>
                 </DrawerBody>
                 <DrawerFooter>
