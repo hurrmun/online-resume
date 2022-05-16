@@ -20,6 +20,7 @@ import { isValidMotionProp, motion } from 'framer-motion';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { contactSchema } from '../misc/formValidation';
 import { itemReverse } from '../misc/animations';
+import emailjs from '@emailjs/browser';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
@@ -45,26 +46,34 @@ export default function Contact() {
   });
 
   type submitData = {
-    to: string;
-    from: string;
+    from_email: string;
+    from_name: string;
+    from_affiliation?: string;
+    from_number?: string;
     subject: string;
-    html: string;
+    message: string;
   };
 
   const submitForm = (email: submitData) => {
     // send message
+    emailjs.send('gmail', 'contact_form', email, 'xtY2mvWUNl29HeDtO').then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const transformed = {
-      to: 'hermanlyx@gmail.com',
-      from: data.email,
-      subject: `Message from resume site: ${data.subject}`,
-      html: `
-        <p><strong>Name: ${data.name}</strong></p>
-        <p><strong>Affiliation: ${data.affiliation}</strong></p>
-        <p>${data.formMessage}</p>
-      `,
+      from_email: data.email,
+      subject: data.subject,
+      from_name: data.name,
+      from_affiliation: data.affiliation,
+      from_number: data.phone,
+      message: data.formMessage,
     };
     submitForm(transformed);
   };
