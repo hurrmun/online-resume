@@ -13,6 +13,7 @@ import {
   Text,
   Textarea,
   useColorModeValue,
+  useToast,
   VStack,
 } from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -45,6 +46,8 @@ export default function Contact() {
     resolver: yupResolver(contactSchema),
   });
 
+  const toast = useToast();
+
   type submitData = {
     from_email: string;
     from_name: string;
@@ -56,14 +59,35 @@ export default function Contact() {
 
   const submitForm = (email: submitData) => {
     // send message
-    emailjs.send('gmail', 'contact_form', email, 'xtY2mvWUNl29HeDtO').then(
-      (result) => {
-        console.log(result.text);
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
+    emailjs
+      .send(
+        'hurrmundotdev@gmail.com',
+        'contact_form',
+        email,
+        'xtY2mvWUNl29HeDtO'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast({
+            title: 'Your Message was Sent.',
+            status: 'success',
+            duration: 5000,
+            isClosable: true,
+            position: 'bottom-left',
+          });
+        },
+        (error) => {
+          console.log(error.text);
+          toast({
+            title: 'Something went wrong.',
+            status: 'error',
+            duration: 5000,
+            isClosable: true,
+            position: 'bottom-left',
+          });
+        }
+      );
   };
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
@@ -89,7 +113,7 @@ export default function Contact() {
         formMessage: '',
       });
     }
-  }, [isSubmitSuccessful, reset]);
+  }, [isSubmitSuccessful, reset, toast]);
 
   return (
     <ChakraBox>
