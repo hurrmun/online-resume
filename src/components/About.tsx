@@ -15,6 +15,7 @@ import { COPYWRITE } from '../misc/copywrite';
 import { container, item } from '../misc/animations';
 import resume from '../files/herman-resume.pdf';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { scroller } from 'react-scroll';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
@@ -144,6 +145,13 @@ export default function About() {
           padding={4}
           _hover={{
             bg: useColorModeValue('orange.200', 'gray.700'),
+          }}
+          onClick={() => {
+            scroller.scrollTo('skills', {
+              duration: 1000,
+              smooth: true,
+              offset: -100,
+            });
           }}
         />
       </ChakraBox>

@@ -35,17 +35,17 @@ const NavLink = ({
   section: string;
   close?: () => void;
 }) => (
-  <Box
+  <Button
     px={2}
     py={1}
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      cursor: 'pointer',
       bg: useColorModeValue('orange.200', 'gray.800'),
     }}
     textTransform='lowercase'
     fontWeight='bold'
+    variant='ghost'
     onClick={() => {
       scroller.scrollTo(section, {
         duration: 1000,
@@ -56,7 +56,7 @@ const NavLink = ({
     }}
   >
     {children}
-  </Box>
+  </Button>
 );
 
 export default function Nav() {
