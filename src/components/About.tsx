@@ -12,7 +12,7 @@ import {
 import { TriangleDownIcon, DownloadIcon } from '@chakra-ui/icons';
 import { motion, isValidMotionProp } from 'framer-motion';
 import { COPYWRITE } from '../misc/copywrite';
-import { container, item, itemReverse } from '../misc/animations';
+import { container, item } from '../misc/animations';
 import resume from '../files/herman-resume.pdf';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
@@ -45,7 +45,7 @@ export default function About() {
             {about.heading}
           </Heading>
         </ChakraBox>
-        <ChakraBox variants={itemReverse}>
+        <ChakraBox variants={item}>
           <Text
             marginTop={10}
             paddingX={5}
@@ -112,7 +112,7 @@ export default function About() {
           </HStack>
         </ChakraBox>
         <ChakraBox
-          variants={itemReverse}
+          variants={item}
           bg={useColorModeValue('orange.100', 'gray.700')}
           marginTop={10}
           width='full'

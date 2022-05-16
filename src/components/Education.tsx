@@ -56,7 +56,7 @@ const Card = ({
 
 export default function Education() {
   return (
-    <ChakraBox variants={container} marginTop={{ base: 20, lg: 32 }}>
+    <ChakraBox marginTop={{ base: 20, lg: 32 }}>
       <Heading
         fontSize={{ base: '4xl', lg: '7xl' }}
         paddingX={5}

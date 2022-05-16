@@ -15,7 +15,6 @@ import {
 } from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
 import { workExperience } from '../misc/content';
-import { container, item } from '../misc/animations';
 
 const Card = ({
   companyName,
@@ -113,7 +112,7 @@ const ChakraBox = chakra(motion.div, {
 
 export default function Experience() {
   return (
-    <ChakraBox variants={container} marginTop={{ base: 20, lg: 32 }}>
+    <ChakraBox marginTop={{ base: 20, lg: 32 }}>
       <Heading
         fontSize={{ base: '4xl', lg: '7xl' }}
         paddingX={5}
@@ -124,9 +123,10 @@ export default function Experience() {
       >
         Experience
       </Heading>
+
       <VStack gap={2} paddingRight={{ base: 0, lg: 4 }}>
         {workExperience.map(({ ...props }, index) => (
-          <ChakraBox key={props.companyName} variants={item}>
+          <ChakraBox key={props.companyName}>
             <Card {...props} />
             {index !== workExperience.length - 1 && <Divider marginTop={4} />}
           </ChakraBox>

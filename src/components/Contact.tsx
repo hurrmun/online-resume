@@ -20,8 +20,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { isValidMotionProp, motion } from 'framer-motion';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { contactSchema } from '../misc/formValidation';
-import { itemReverse } from '../misc/animations';
 import emailjs from '@emailjs/browser';
+import { item } from '../misc/animations';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
@@ -128,7 +128,7 @@ export default function Contact() {
         Contact Me
       </Heading>
       <ChakraBox
-        variants={itemReverse}
+        variants={item}
         bg={useColorModeValue('orange.100', 'gray.700')}
         marginBottom={8}
         width='full'
