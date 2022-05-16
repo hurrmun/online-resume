@@ -16,8 +16,14 @@ import {
   DrawerBody,
   useDisclosure,
   DrawerCloseButton,
+  DrawerFooter,
+  HStack,
+  IconButton,
 } from '@chakra-ui/react';
+import { DownloadIcon } from '@chakra-ui/icons';
 import { MoonIcon, SunIcon, HamburgerIcon } from '@chakra-ui/icons';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import resume from '../files/herman-resume.pdf';
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -99,9 +105,14 @@ export default function Nav() {
               <DrawerOverlay />
               <DrawerContent>
                 <DrawerCloseButton />
-                <DrawerHeader>Navigate to</DrawerHeader>
+                <DrawerHeader
+                  bg={useColorModeValue('orange.300', 'gray.900')}
+                  marginBottom={4}
+                >
+                  Navigate to
+                </DrawerHeader>
                 <DrawerBody>
-                  <Stack direction='column' spacing={[3, 3, 7]}>
+                  <Stack direction='column' spacing={[4, 4, 7]}>
                     <NavLink children='About Me' />
                     <NavLink children='Skills' />
                     <NavLink children='Experience' />
@@ -110,6 +121,62 @@ export default function Nav() {
                     <NavLink children='Contact' />
                   </Stack>
                 </DrawerBody>
+                <DrawerFooter>
+                  <HStack>
+                    <Link
+                      href='https://github.com/hurrmun'
+                      _hover={{
+                        textDecoration: 'none',
+                      }}
+                      target='_blank'
+                    >
+                      <IconButton
+                        aria-label='github'
+                        icon={<FaGithub />}
+                        variant='outline'
+                        borderColor={useColorModeValue('yellow.900', 'white')}
+                        _hover={{
+                          bg: useColorModeValue('orange.200', 'gray.700'),
+                        }}
+                      />
+                    </Link>
+                    <Link
+                      href='https://www.linkedin.com/in/hermanlyx/'
+                      _hover={{
+                        textDecoration: 'none',
+                      }}
+                      target='_blank'
+                    >
+                      <IconButton
+                        aria-label='linkedIn'
+                        icon={<FaLinkedinIn />}
+                        variant='outline'
+                        borderColor={useColorModeValue('yellow.900', 'white')}
+                        _hover={{
+                          bg: useColorModeValue('orange.200', 'gray.700'),
+                        }}
+                      />
+                    </Link>
+                    <Link
+                      href={resume}
+                      download
+                      _hover={{
+                        textDecoration: 'none',
+                      }}
+                    >
+                      <Button
+                        variant='outline'
+                        borderColor={useColorModeValue('yellow.900', 'white')}
+                        rightIcon={<DownloadIcon />}
+                        _hover={{
+                          bg: useColorModeValue('orange.200', 'gray.700'),
+                        }}
+                      >
+                        Download my CV
+                      </Button>
+                    </Link>
+                  </HStack>
+                </DrawerFooter>
               </DrawerContent>
             </Drawer>
           </Stack>
