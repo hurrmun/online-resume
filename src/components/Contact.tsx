@@ -104,6 +104,13 @@ export default function Contact() {
 
   useEffect(() => {
     if (isSubmitSuccessful) {
+      toast({
+        title: 'Sending Message...',
+        status: 'warning',
+        duration: 3000,
+        isClosable: true,
+        position: 'bottom-left',
+      });
       reset({
         name: '',
         affiliation: '',
