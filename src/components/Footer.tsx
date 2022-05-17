@@ -68,12 +68,12 @@ export default function Footer() {
           © 2022 Herman Loh Online Resume
         </Link>
         <Stack direction={'row'} spacing={6}>
-          <SocialButton label={'LinkedIn'} href={'https://github.com/hurrmun'}>
+          <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/in/hermanlyx/'}>
             <FaLinkedin />
           </SocialButton>
           <SocialButton
             label={'GitHub'}
-            href={'https://www.linkedin.com/in/hermanlyx/'}
+            href={'https://github.com/hurrmun'}
           >
             <FaGithub />
           </SocialButton>
