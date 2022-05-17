@@ -72,7 +72,7 @@ export default function Nav() {
         position='sticky'
         top={0}
         width='full'
-        zIndex={1}
+        zIndex={3}
       >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Text fontSize='xl' casing='uppercase' fontWeight='bold'>
