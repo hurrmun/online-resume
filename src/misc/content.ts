@@ -116,7 +116,7 @@ export const projects = [
     name: 'Daily Report',
     affiliation: 'Report App Concept for Concrete Supplier',
     description:
-      'Full-Stack MERN application created to optimize a real use case of writing reports for material supplies on an excel spreadsheet. Implemented with login authentication, secure password hashing, and validation.',
+      'Full-Stack PERN application created to optimize a real use case of writing reports for material supplies on an excel spreadsheet. Implemented with login authentication, secure password hashing, and validation.',
     tags: [
       'Javascript',
       'React',
