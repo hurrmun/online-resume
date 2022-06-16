@@ -16,6 +16,7 @@ import { container, item } from '../misc/animations';
 import resume from '../files/herman-resume.pdf';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { scroller } from 'react-scroll';
+import Feature from './Feature';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
@@ -45,6 +46,7 @@ export default function About() {
           >
             {about.heading}
           </Heading>
+          <Feature />
         </ChakraBox>
         <ChakraBox variants={item}>
           <Text
