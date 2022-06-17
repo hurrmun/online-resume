@@ -38,7 +38,11 @@ export default function About() {
         exit='exit'
         textAlign='center'
       >
-        <ChakraBox variants={item} width='full' height='300px'>
+        <ChakraBox
+          variants={item}
+          width='full'
+          height={{ base: '200px', lg: '500px' }}
+        >
           {/* <Heading
             fontSize={{ base: '6xl', lg: '9xl' }}
             lineHeight={1}
