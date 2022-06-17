@@ -51,14 +51,15 @@ export default function Footer() {
       color={useColorModeValue('yellow.800', 'white')}
       marginTop={10}
     >
-      <Container
-        as={Stack}
+      <Stack
         maxW={'7xl'}
         py={8}
+        px={8}
         direction={{ base: 'column', md: 'row' }}
         spacing={4}
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}
+        marginX='auto'
       >
         <Link
           href='https://github.com/hurrmun/online-resume'
@@ -68,17 +69,17 @@ export default function Footer() {
           © 2022 Herman Loh Online Resume
         </Link>
         <Stack direction={'row'} spacing={6}>
-          <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/in/hermanlyx/'}>
+          <SocialButton
+            label={'LinkedIn'}
+            href={'https://www.linkedin.com/in/hermanlyx/'}
+          >
             <FaLinkedin />
           </SocialButton>
-          <SocialButton
-            label={'GitHub'}
-            href={'https://github.com/hurrmun'}
-          >
+          <SocialButton label={'GitHub'} href={'https://github.com/hurrmun'}>
             <FaGithub />
           </SocialButton>
         </Stack>
-      </Container>
+      </Stack>
     </Box>
   );
 }

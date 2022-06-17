@@ -1,40 +1,52 @@
 import * as THREE from 'three';
 import * as React from 'react';
-import { useRef, useState } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Mesh, BoxGeometry, MeshStandardMaterial } from 'three';
+import { Box } from '@chakra-ui/react';
+import { useRef } from 'react';
+import { Canvas, useFrame, createRoot, extend } from '@react-three/fiber';
+import { OrbitControls, OrbitControlsProps } from '@react-three/drei';
 
-function Box(props: JSX.IntrinsicElements['mesh']) {
+const args = {
+  enableDamping: true,
+  enablePan: true,
+  nableRotate: true,
+  enableZoom: true,
+  reverseOrbit: false,
+};
+
+export const OrbitControlsStory = (props: OrbitControlsProps) => (
+  <>
+    <OrbitControls {...props} />
+    <Box>
+      <meshBasicMaterial wireframe />
+    </Box>
+  </>
+);
+
+OrbitControlsStory.args = args;
+OrbitControlsStory.storyName = 'Default';
+
+function Cube(props: JSX.IntrinsicElements['mesh']) {
   // This reference will give us direct access to the THREE.Mesh object
   const ref = useRef<THREE.Mesh>(null!);
-  // Hold state for hovered and clicked events
-  const [hovered, hover] = useState(false);
-  const [clicked, click] = useState(false);
   // Rotate mesh every frame, this is outside of React without overhead
-  useFrame((state, delta) => (ref.current.rotation.x += 0.01));
+  useFrame((state, delta) => (ref.current.rotation.x += 0.001));
 
   return (
-    <mesh
-      {...props}
-      ref={ref}
-      scale={clicked ? 1.5 : 1}
-      onClick={(event) => click(!clicked)}
-      onPointerOver={(event) => hover(true)}
-      onPointerOut={(event) => hover(false)}
-    >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+    <mesh {...props} ref={ref} scale={1}>
+      <sphereGeometry args={[1, 16, 16]} />
+      <meshStandardMaterial color='orange' wireframe={true} />
     </mesh>
   );
 }
 
 export default function Feature() {
   return (
-    <Canvas>
-      <ambientLight intensity={0.5} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <pointLight position={[-10, -10, -10]} />
-      <Box position={[-1.2, 0, 0]} />
-      <Box position={[1.2, 0, 0]} />
+    <Canvas
+      camera={{ fov: 75, near: 0.1, far: 100, position: [0, 0, -1] }}
+      dpr={[1, 1]}
+    >
+      <Cube position={[0, 0, 1]} />
     </Canvas>
   );
 }

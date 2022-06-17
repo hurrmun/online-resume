@@ -38,14 +38,14 @@ export default function About() {
         exit='exit'
         textAlign='center'
       >
-        <ChakraBox variants={item}>
-          <Heading
+        <ChakraBox variants={item} width='full' height='300px'>
+          {/* <Heading
             fontSize={{ base: '6xl', lg: '9xl' }}
             lineHeight={1}
             paddingX={4}
           >
             {about.heading}
-          </Heading>
+          </Heading> */}
           <Feature />
         </ChakraBox>
         <ChakraBox variants={item}>
