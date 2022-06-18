@@ -2,8 +2,14 @@ import * as THREE from 'three';
 import * as React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Text, Center, Float } from '@react-three/drei';
+import { useColorModeValue } from '@chakra-ui/react';
 
-function FeatureText(props: JSX.IntrinsicElements['mesh']) {
+type MeshType = JSX.IntrinsicElements['mesh'];
+interface FeatureTextProp extends MeshType {
+  color: string;
+}
+
+function FeatureText(props: FeatureTextProp) {
   return (
     <React.Suspense fallback={null}>
       <Center>
@@ -16,6 +22,7 @@ function FeatureText(props: JSX.IntrinsicElements['mesh']) {
             anchorX='center'
             anchorY='middle'
             textAlign='center'
+            color={props.color}
           >
             <meshBasicMaterial side={THREE.DoubleSide} />
             WELCOME TO HERMAN'S ONLINE RESUME
@@ -27,10 +34,11 @@ function FeatureText(props: JSX.IntrinsicElements['mesh']) {
 }
 
 export default function Feature() {
+  const color = useColorModeValue('#5F370E', 'white');
   return (
     <>
       <Canvas camera={{ position: [0, 0, 30], near: 0.1, far: 1000, fov: 75 }}>
-        <FeatureText />
+        <FeatureText color={color} />
         <OrbitControls />
       </Canvas>
     </>
