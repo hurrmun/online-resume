@@ -354,7 +354,7 @@ export default function Contact() {
           color={useColorModeValue('yellow.800', 'white')}
           _hover={{ bg: useColorModeValue('orange.300', 'gray.600') }}
           isLoading={isSubmitting}
-          isFullWidth
+          width='full'
           type='submit'
         >
           Submit

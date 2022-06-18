@@ -16,6 +16,7 @@ import { container, item } from '../misc/animations';
 import resume from '../files/herman-resume.pdf';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { scroller } from 'react-scroll';
+import Feature from './Feature';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
@@ -25,7 +26,7 @@ export default function About() {
   const { about } = COPYWRITE;
 
   return (
-    <Box marginTop={16}>
+    <Box marginTop={8}>
       <ChakraBox
         display='flex'
         flexDirection='column'
@@ -37,14 +38,19 @@ export default function About() {
         exit='exit'
         textAlign='center'
       >
-        <ChakraBox variants={item}>
-          <Heading
+        <ChakraBox
+          variants={item}
+          width='full'
+          height={{ base: '160px', md: '300px', lg: '500px' }}
+        >
+          {/* <Heading
             fontSize={{ base: '6xl', lg: '9xl' }}
             lineHeight={1}
             paddingX={4}
           >
             {about.heading}
-          </Heading>
+          </Heading> */}
+          <Feature />
         </ChakraBox>
         <ChakraBox variants={item}>
           <Text
