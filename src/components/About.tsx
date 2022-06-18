@@ -1,7 +1,6 @@
 import {
   Box,
   chakra,
-  Heading,
   Text,
   IconButton,
   useColorModeValue,
@@ -43,13 +42,6 @@ export default function About() {
           width='full'
           height={{ base: '160px', md: '300px', lg: '500px' }}
         >
-          {/* <Heading
-            fontSize={{ base: '6xl', lg: '9xl' }}
-            lineHeight={1}
-            paddingX={4}
-          >
-            {about.heading}
-          </Heading> */}
           <Feature />
         </ChakraBox>
         <ChakraBox variants={item}>
