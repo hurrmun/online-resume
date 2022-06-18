@@ -26,7 +26,7 @@ export default function About() {
   const { about } = COPYWRITE;
 
   return (
-    <Box marginTop={16}>
+    <Box marginTop={8}>
       <ChakraBox
         display='flex'
         flexDirection='column'
@@ -41,7 +41,7 @@ export default function About() {
         <ChakraBox
           variants={item}
           width='full'
-          height={{ base: '200px', lg: '500px' }}
+          height={{ base: '160px', md: '300px', lg: '500px' }}
         >
           {/* <Heading
             fontSize={{ base: '6xl', lg: '9xl' }}
