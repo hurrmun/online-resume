@@ -5,11 +5,11 @@ import { OrbitControls, Text, Center, Float } from '@react-three/drei';
 import { useColorModeValue } from '@chakra-ui/react';
 
 type MeshType = JSX.IntrinsicElements['mesh'];
-interface FeatureTextProp extends MeshType {
+interface FeatureTextProps extends MeshType {
   color: string;
 }
 
-function FeatureText(props: FeatureTextProp) {
+function FeatureText(props: FeatureTextProps) {
   return (
     <React.Suspense fallback={null}>
       <Center>
