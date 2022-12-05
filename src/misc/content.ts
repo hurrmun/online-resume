@@ -129,7 +129,6 @@ export const projects = [
     ],
     imageSrc: dailyreportScreen,
     github: 'https://github.com/hurrmun/daily-report',
-    deployment: 'https://daily-report-hurrmun.herokuapp.com/',
   },
   {
     name: 'BuildAWT',
