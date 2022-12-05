@@ -149,11 +149,14 @@ export default function Contact() {
           textAlign='center'
         >
           If you have any enquiries for me or want to have a chat, you can
-          either drop me an email at <Text as='b'>hermanlyx@gmail.com</Text>,
-          connect with me on{' '}
+          either drop me an email at{' '}
+          <Link as='b' href='mailto:hermanlyx@gmail.com'>
+            hermanlyx@gmail.com
+          </Link>
+          , connect with me on{' '}
           <Link
             href='https://www.linkedin.com/in/hermanlyx/'
-            textDecoration='underline'
+            as='b'
             target='_blank'
           >
             linkedIn
