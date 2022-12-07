@@ -10,7 +10,6 @@ import {
   Image,
   Text,
   Button,
-  useBreakpointValue,
   VStack,
 } from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
@@ -26,22 +25,20 @@ const Card = ({
   companyName: string;
   role: string;
   duration: string;
-  description: string;
+  description: string[];
   imageSrc: string;
 }) => {
-  const display = useBreakpointValue({ base: 'block', lg: 'none' });
-
   const [seeMore, setSeeMore] = useState(false);
   const [cardContent, setCardContent] = useState({
-    lines: 4,
+    lines: 3,
     expandText: 'See More',
   });
 
   useEffect(() => {
     if (seeMore) {
-      setCardContent({ lines: 10, expandText: 'See Less' });
+      setCardContent({ lines: 100, expandText: 'See Less' });
     } else {
-      setCardContent({ lines: 4, expandText: 'See More' });
+      setCardContent({ lines: 3, expandText: 'See More' });
     }
   }, [seeMore]);
 
@@ -87,10 +84,16 @@ const Card = ({
           </Text>
         </Box>
         <Text fontSize={{ base: 'lg', lg: 'xl' }} noOfLines={cardContent.lines}>
-          {description}
+          {description.map((paragraph, i) => (
+            <Text
+              display='block'
+              marginTop={i === description.length - 1 ? '5' : '0'}
+            >
+              {paragraph}
+            </Text>
+          ))}
         </Text>
         <Button
-          display={display}
           variant='ghost'
           onClick={() => setSeeMore((prev) => !prev)}
           _hover={{
@@ -104,7 +107,6 @@ const Card = ({
     </Grid>
   );
 };
-// import { container, item } from './animations';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',

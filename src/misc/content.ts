@@ -40,32 +40,40 @@ export const workExperience = [
 
     role: 'Associate Software Engineer',
     duration: 'March 2022 to Present',
-    description:
-      'Implemented UI using React and various libraries. Unit, functional testing, and bug fixing for various components using Jest and React Testing Library. Worked in AGILE environment, with CI/CD over multiple sprints along with integrating new Back-End APIs.',
+    description: [
+      'As a software engineer, I implemented user interfaces and designs using React and various web libraries. Other responsibilities include unit & functional testing, bug fixing for various components using Jest and React Testing Library and integrating back-end APIs. Projects were conducted in an AGILE environment, with continuous integration and continuous delivery over multiple sprints.',
+      'Projects I have worked on include the Youth Health Management System by Health Promotion Board, a web application for creating and managing consent from students/parents and the SupportGoWhere website by GovTech GDS, where users can find and apply for financial aid schemes.',
+    ],
     imageSrc: ufinityLogo,
   },
   {
     companyName: 'General Assembly',
     role: 'Instructional Associate',
     duration: 'December 2021 to March 2022',
-    description:
-      'Conducted lessons in Full-Stack Software Development with JavaScript, React, Express and MongoDB. As a Teaching Assistant, enabled students to achieve their goals to be industry-ready Software Engineers.',
+    description: [
+      'Responsibilities include conducting lessons in Full-Stack Software Development with JavaScript, React, Express and MongoDB. Assisted the Lead Instructor in preparing lesson materials and resources using version management tools like GitHub enterprise. In addition, I created new lesson materials to demonstrate the uses of different libraries.',
+      'As a Teaching Assistant, I enabled students from diverse backgrounds and ages to achieve their goals of becoming industry-ready Software Engineers.',
+    ],
     imageSrc: generalAssemblyLogo,
   },
   {
     companyName: 'Republic of Singapore Air Force',
     role: 'Service  Medic',
     duration: 'December 2019 to August 2021',
-    description:
+    description: [
       'Introduced a new patient management system, streamlining appointments between doctors and patients. Created numerous designed posters and videos for RSAF’s Healthy Lifestyle & Anti-smoking Campaigns.',
+      'Best Airman of the Month award received due to various contributions to the unit and excellence in day-to-day duties.',
+    ],
     imageSrc: rsafLogo,
   },
   {
     companyName: 'Sixmoredays',
     role: 'Digital Design Intern',
     duration: 'March 2018 to June 2018',
-    description:
-      'Produced website mock-ups & social media assets and contributed to pitches & projects taken by the company. Created layout designs for web banners, interactive social posts & digital marketing with Facebook post hacking.',
+    description: [
+      'Responsibilities include creating media assets for use in various advertising and branding projects. Throughout the internship, I produced website mock-ups & graphics for major brands such as Nin Jiom, Daikin, and many others.',
+      'Additionally, I contributed to pitches & projects taken on by the company, and created layout designs for web banners, interactive social posts & digital marketing with Facebook post hacking.',
+    ],
     imageSrc: sixmoredaysLogo,
   },
 ];
