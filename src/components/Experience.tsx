@@ -30,15 +30,15 @@ const Card = ({
 }) => {
   const [seeMore, setSeeMore] = useState(false);
   const [cardContent, setCardContent] = useState({
-    lines: 3,
+    maxHeight: '86px',
     expandText: 'See More',
   });
 
   useEffect(() => {
     if (seeMore) {
-      setCardContent({ lines: 100, expandText: 'See Less' });
+      setCardContent({ maxHeight: '1000px', expandText: 'See Less' });
     } else {
-      setCardContent({ lines: 3, expandText: 'See More' });
+      setCardContent({ maxHeight: '86px', expandText: 'See More' });
     }
   }, [seeMore]);
 
@@ -83,7 +83,11 @@ const Card = ({
             {role} | {duration}
           </Text>
         </Box>
-        <Text fontSize={{ base: 'lg', lg: 'xl' }} noOfLines={cardContent.lines}>
+        <Text
+          fontSize={{ base: 'lg', lg: 'xl' }}
+          maxHeight={cardContent.maxHeight}
+          overflow='hidden'
+        >
           {description.map((paragraph, i) => (
             <Text
               display='block'

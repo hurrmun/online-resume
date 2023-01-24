@@ -41,7 +41,7 @@ export const workExperience = [
     role: 'Associate Software Engineer',
     duration: 'March 2022 to Present',
     description: [
-      'As a software engineer, I implemented user interfaces and designs using React and various web libraries. Other responsibilities include unit & functional testing, bug fixing for various components using Jest and React Testing Library and integrating back-end APIs. Projects were conducted in an AGILE environment, with continuous integration and continuous delivery over multiple sprints.',
+      'As a software engineer, I implemented user interfaces and designs using React and various web libraries, created back-end APIs and services and deployed code to various environments with the SHIP stack. Other responsibilities include unit & functional testing, and bug fixing for various components using Jest and React Testing Library. Projects were conducted in an AGILE environment, with continuous integration and continuous delivery over multiple sprints.',
       'Projects I have worked on include the Youth Health Management System by Health Promotion Board, a web application for creating and managing consent from students/parents and the SupportGoWhere website by GovTech GDS, where users can find and apply for financial aid schemes.',
     ],
     imageSrc: ufinityLogo,
