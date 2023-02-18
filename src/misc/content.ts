@@ -18,6 +18,7 @@ export const skills = {
     'TailwindCSS',
     'ChakraUI',
     'MUI',
+    'Styled Components',
     'Testing Library',
     'Jest',
     'Express',
